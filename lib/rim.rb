@@ -1,10 +1,13 @@
-require 'rake/dsl_definition'
 require 'singleton'
 
 # Rim a super simple ruby project / gem manager
 class Rim
 
-  include Rake::DSL
+  begin
+    require 'rake/dsl_definition'
+    include Rake::DSL
+  rescue LoadError
+  end
   include Singleton
 
   # Setting the default values of attributes. Useful when writing Rim extensions.
