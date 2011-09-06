@@ -1,4 +1,5 @@
 # -- encoding: utf-8 --
+require 'rake/clean'
 require 'singleton'
 
 # Rim a super simple ruby project / gem manager
@@ -28,6 +29,21 @@ class Rim
   # At execution time the Rim instance is coplete initialized.
   def self.after_setup(&blk)
     @definitions << blk
+  end
+
+  # Helper method to generate Rake::FileList objects.
+  # Main difference between Rake::FileList.new and this method is
+  # the possibility to use Regexp objects as parameters.
+  def filelist(*args)
+    res = FileList.new
+    args.each do |arg|
+      if arg.kind_of?(Regexp)
+        res += FileList.new('**/*').grep(arg)
+      else
+        res += FileList.new(arg)
+      end
+    end
+    res
   end
 
   private

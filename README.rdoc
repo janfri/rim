@@ -1,0 +1,1 @@
+Rim - a simple project / gem manager
