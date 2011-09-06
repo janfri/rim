@@ -9,5 +9,5 @@ require 'rim/rdoc'
 Rim.setup do
   name 'rim'
   authors 'janfri'
-  summary 'A simple package / gem manager'
+  summary 'A simple project / gem manager'
 end

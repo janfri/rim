@@ -20,6 +20,7 @@ Rim.defaults do
 end
 
 Rim.after_setup do
+  klass = nil
   begin
     require 'rubygems/package_task'
     klass = Gem::PackageTask
@@ -28,22 +29,24 @@ Rim.after_setup do
     klass = Rake::GemPackageTask
   end
 
-  spec = Gem::Specification.new do |s|
-    s.authors = authors
-    s.email = email
-    s.platform = Gem::Platform::RUBY
-    s.description = description
-    s.homepage = homepage
-    s.name = name
-    s.summary = summary
-    s.version = version
-    s.require_path = lib_dir
-    s.files = lib_dir
-  end
+  if klass
+    spec = Gem::Specification.new do |s|
+      s.authors = authors
+      s.email = email
+      s.platform = Gem::Platform::RUBY
+      s.description = description
+      s.homepage = homepage
+      s.name = name
+      s.summary = summary
+      s.version = version
+      s.require_path = lib_dir
+      s.files = lib_dir
+    end
 
-  klass.new(spec) do |pkg|
-    pkg.need_zip = true
-    pkg.need_tar = true
+    klass.new(spec) do |pkg|
+      pkg.need_zip = true
+      pkg.need_tar = true
+    end
   end
 
 end

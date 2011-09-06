@@ -20,7 +20,7 @@ Rim.after_setup do
 
   if klass
     klass.new do |rd|
-      rd.rdoc_dir = Rim.instance.rdoc_dir || 'doc'
+      rd.rdoc_dir = Rim.instance.rdoc_dir
     end
   end
 end
