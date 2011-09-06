@@ -1,3 +1,4 @@
+# -- encoding: utf-8 --
 class Rim
   # Name of the project / gem
   attr_accessor :name

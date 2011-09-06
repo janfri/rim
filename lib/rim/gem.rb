@@ -1,3 +1,4 @@
+# -- encoding: utf-8 --
 class Rim
   # Gem version
   attr_accessor :version

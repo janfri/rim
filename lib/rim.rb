@@ -1,3 +1,4 @@
+# -- encoding: utf-8 --
 require 'singleton'
 
 # Rim a super simple ruby project / gem manager

@@ -1,3 +1,4 @@
+# -- encoding: utf-8 --
 Rim.after_setup do
   desc 'Start an irb session an loading lib'
   task :irb do
