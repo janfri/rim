@@ -5,6 +5,7 @@ require 'rim/gem'
 require 'rim/info'
 require 'rim/irb'
 require 'rim/rdoc'
+require 'rim/test'
 
 Rim.setup do
   name 'rim'
