@@ -17,7 +17,6 @@ class Rim
 end
 
 Rim.defaults do
-  self.version = '1.0'
 end
 
 Rim.after_setup do
@@ -44,9 +43,16 @@ Rim.after_setup do
       s.files = lib_dir
     end
 
-    klass.new(spec) do |pkg|
+    task_object = klass.new(spec) do |pkg|
       pkg.need_zip = true
       pkg.need_tar = true
+    end
+
+    desc 'Push the gem to rubygems.org'
+    task :release => [:test, :gem] do
+      gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
+      puts "Push #{gem_filename} to rubygems.org"
+      system "gem push #{gem_filename}"
     end
   end
 

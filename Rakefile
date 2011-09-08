@@ -10,5 +10,6 @@ require 'rim/test'
 Rim.setup do
   name 'rim'
   authors 'janfri'
+  version '1.0'
   summary 'A simple project / gem manager'
 end
