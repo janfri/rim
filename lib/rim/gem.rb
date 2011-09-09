@@ -14,9 +14,13 @@ class Rim
 
   # Project homepage
   attr_accessor :homepage
+
+  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, 'lib/**/*', 'test/**/*'</code>)
+  attr_accessor :gem_files
 end
 
 Rim.defaults do
+  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, 'lib/**/*', 'test/**/*')
 end
 
 Rim.after_setup do
@@ -40,12 +44,10 @@ Rim.after_setup do
       s.summary = summary
       s.version = version
       s.require_path = lib_dir
-      s.files = lib_dir
+      s.files = gem_files
     end
 
     task_object = klass.new(spec) do |pkg|
-      pkg.need_zip = true
-      pkg.need_tar = true
     end
 
     desc 'Push the gem to rubygems.org'

@@ -9,7 +9,13 @@ require 'rim/test'
 
 Rim.setup do
   name 'rim'
-  authors 'janfri'
-  version '1.0'
+  authors 'Jan Friedrich'
+  email 'janfri@gmail.com'
+  homepage 'http://gitorious.org/rim'
+  version '1.0.1'
   summary 'A simple project / gem manager'
+  description <<-END
+    Goal is to have a project managing that just works on many Ruby
+    versions as possible and is easy to extend. Feel free to dislike it. ;)
+  END
 end
