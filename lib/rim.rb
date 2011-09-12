@@ -6,6 +6,8 @@ require 'singleton'
 # Rim a super simple ruby project / gem manager
 class Rim
 
+  VERSION = '1.1.0'
+
   begin
     require 'rake/dsl_definition'
     include Rake::DSL

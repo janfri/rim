@@ -1,6 +1,7 @@
 $:.unshift File.dirname(__FILE__) + '/lib'
 require 'rim'
 require 'rim/core'
+require 'rim/check_version'
 require 'rim/gem'
 require 'rim/git'
 require 'rim/info'
@@ -13,7 +14,7 @@ Rim.setup do
   authors 'Jan Friedrich'
   email 'janfri26@gmail.com'
   homepage 'http://gitorious.org/rim'
-  version '1.0.2'
+  version Rim::VERSION
   summary 'A simple project / gem manager'
   description <<-END
     Goal is to have a project managing that just works on many Ruby
