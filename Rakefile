@@ -10,7 +10,7 @@ require 'rim/test'
 Rim.setup do
   name 'rim'
   authors 'Jan Friedrich'
-  email 'janfri@gmail.com'
+  email 'janfri26@gmail.com'
   homepage 'http://gitorious.org/rim'
   version '1.0.1'
   summary 'A simple project / gem manager'
