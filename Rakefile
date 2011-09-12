@@ -17,7 +17,7 @@ Rim.setup do
   version Rim::VERSION
   summary 'A simple project / gem manager'
   description <<-END
-    Goal is to have a project managing that just works on many Ruby
-    versions as possible and is easy to extend. Feel free to dislike it. ;)
+Goal is to have a project managing that just works on many Ruby
+versions as possible and is easy to extend. Feel free to dislike it. ;)
   END
 end

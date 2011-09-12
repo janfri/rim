@@ -3,7 +3,10 @@ require 'rake'
 require 'rake/clean'
 require 'singleton'
 
-# Rim a super simple ruby project / gem manager
+# == Rim a super simple ruby project / gem manager
+#
+# Goal is to have a project managing that just works on many Ruby
+# versions as possible and is easy to extend. Feel free to dislike it. ;)
 class Rim
 
   VERSION = '1.1.0'
