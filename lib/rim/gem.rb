@@ -1,4 +1,5 @@
 # -- encoding: utf-8 --
+require 'rim/release'
 class Rim
   # Gem version
   attr_accessor :version
@@ -50,12 +51,15 @@ Rim.after_setup do
     task_object = klass.new(spec) do |pkg|
     end
 
-    desc 'Push the gem to rubygems.org'
-    task :release => [:test, :gem] do
-      gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
-      puts "Push #{gem_filename} to rubygems.org"
-      system "gem push #{gem_filename}"
+    namespace :gem do
+      desc 'Push the gem to rubygems.org'
+      task :push => [:clean, :test, :gem] do
+        gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
+        puts "Push #{gem_filename} to rubygems.org"
+        sh "gem push #{gem_filename}"
+      end
     end
+    task :release => :gem
   end
 
 end

@@ -32,6 +32,11 @@ class Rim
     @definitions << blk
   end
 
+  # Invoke task +name+ if defined raise an error otherwise.
+  def invoke name
+    Rake::Task[name].invoke
+  end
+
   # Helper method to generate Rake::FileList objects.
   # Main difference between Rake::FileList.new and this method is
   # the possibility to use Regexp objects as parameters.
