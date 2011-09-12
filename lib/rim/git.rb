@@ -11,8 +11,15 @@ Rim.after_setup do
         puts cmd
         sh cmd
       end
+      desc 'Check if git tree is clean'
+      task :check do
+        res = `git status`
+        if res !~ /nothing to commit/
+          raise 'Git tree is not clean'
+        end
+      end
     end
-    task :release do
+    task :release => 'git:check' do
       invoke 'git:tag'
     end
   end
