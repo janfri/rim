@@ -3,13 +3,16 @@ class Rim
   # Name of the project / gem
   attr_accessor :name
 
-  # lib directory (default +lib+)
-  attr_accessor :lib_dir
-
   # Authors of the project / gem
   attr_accessor :authors
 
-  defaults do
-    lib_dir 'lib'
-  end
+  # Project / gem version
+  attr_accessor :version
+
+  # Paths for require to load the lib (default: <code>['lib']</code>
+  attr_accessor :require_paths
+end
+
+Rim.defaults do |r|
+  r.require_paths = ['lib']
 end

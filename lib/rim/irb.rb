@@ -2,6 +2,7 @@
 Rim.after_setup do
   desc 'Start an irb session an loading lib'
   task :irb do
-    exec "irb -I #{lib_dir} -r #{name}"
+    i_params = Array(require_paths).map {|e| '-I ' << e}.join(' ')
+    sh "irb #{i_params} -r #{name}"
   end
 end
