@@ -32,6 +32,9 @@ Rim.after_setup do
   end
 
   if klass
+    task :gem do
+      puts "Building #{name}-#{version}.gem"
+    end
     spec = Gem::Specification.new do |s|
       s.authors = authors
       s.email = email
@@ -52,7 +55,6 @@ Rim.after_setup do
       desc 'Push the gem to rubygems.org'
       task :push => [:clean, :test, :gem] do
         gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
-        puts "Push #{gem_filename} to rubygems.org"
         sh "gem push #{gem_filename}"
       end
     end
