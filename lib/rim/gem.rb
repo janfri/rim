@@ -1,4 +1,5 @@
 # -- encoding: utf-8 --
+require 'rim/install'
 require 'rim/release'
 class Rim
   # Project / gem description
@@ -52,13 +53,23 @@ Rim.after_setup do
     end
 
     namespace :gem do
+      gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
       desc 'Push the gem to rubygems.org'
       task :push => [:clean, :test, :gem] do
-        gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
         sh "gem push #{gem_filename}"
+      end
+      desc "Install #{gem_filename}"
+      task :install => :gem do
+        sh "gem install #{gem_filename}"
+      end
+      desc "Uninstall gem #{name} version #{version}"
+      task :uninstall do
+        sh "gem uninstall --version #{version} #{name}"
       end
     end
     task :release => :gem
+    task :install => 'gem:install'
+    task :uninstall => 'gem:uninstall'
   end
 
 end
