@@ -19,14 +19,28 @@ class Rim
   include Singleton
 
   # Setting the default values of attributes. Useful when writing Rim extensions.
+  # The block is evaluated in Rim.instance when no parameter is used.
+  # Otherwise the method yields Rim.instance.
   def self.defaults(&blk)
-    Rim.instance.instance_eval &blk
+    rim = Rim.instance
+    if blk.arity == 0
+      rim.instance_eval &blk
+    else
+      yield rim
+    end
   end
 
   # Setting up Rim. This method is usual used in Rakefiles to setting the project specific
   # values of the Rim instance.
+  # The block is evaluated in Rim.instance when no parameter is used.
+  # Otherwise the method yields Rim.instance.
   def self.setup(&blk)
-    Rim.instance.instance_eval &blk
+    rim = Rim.instance
+    if blk.arity == 0
+      rim.instance_eval &blk
+    else
+      yield rim
+    end
     execute_definitions
   end
 
