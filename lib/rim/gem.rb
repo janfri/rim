@@ -14,12 +14,12 @@ class Rim
   # Project homepage
   attr_accessor :homepage
 
-  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'lib/**/*', 'test/**/*'</code>)
+  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*'</code>)
   attr_accessor :gem_files
 end
 
 Rim.defaults do
-  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'lib/**/*', 'test/**/*')
+  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*')
 end
 
 Rim.after_setup do
