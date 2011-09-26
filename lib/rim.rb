@@ -18,7 +18,8 @@ class Rim
   end
   include Singleton
 
-  # Setting the default values of attributes. Useful when writing Rim extensions.
+  # Setting the default values of attributes. Useful when writing Rim
+  # extensions.
   # The block is evaluated in Rim.instance when no parameter is used.
   # Otherwise the method yields Rim.instance.
   def self.defaults(&blk)
@@ -30,8 +31,8 @@ class Rim
     end
   end
 
-  # Setting up Rim. This method is usual used in Rakefiles to setting the project specific
-  # values of the Rim instance.
+  # Setting up Rim. This method is usual used in Rakefiles to setting
+  # the project specific values of the Rim instance.
   # The block is evaluated in Rim.instance when no parameter is used.
   # Otherwise the method yields Rim.instance.
   def self.setup(&blk)
@@ -46,7 +47,7 @@ class Rim
 
   # The block is executed after setup is completed.
   # Useful when writing rim extensions.
-  # At execution time the Rim instance is coplete initialized.
+  # At execution time the Rim instance is complete initialized.
   def self.after_setup(&blk)
     @definitions << blk
   end
