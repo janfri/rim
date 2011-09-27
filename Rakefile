@@ -4,9 +4,8 @@ require 'rim/core'
 require 'rim/check_version'
 require 'rim/gem'
 require 'rim/git'
-require 'rim/info'
-require 'rim/irb'
 require 'rim/rdoc'
+require 'rim/rimrc'
 require 'rim/test'
 
 Rim.setup do
