@@ -1,7 +1,7 @@
 # -- encoding: utf-8 --
 require 'rim/release'
 Rim.after_setup do
-  changelog = filelist(/^Changelog/).first
+  changelog = filelist(/^Changelog/i).first
   desc "Check version in #{changelog} with Rim#version."
   task :check_version do
   line = File.open(changelog) do |f|
