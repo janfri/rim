@@ -19,7 +19,7 @@ class TestHelperMethods < Test::Unit::TestCase
 
   def test_filelist
     rim = Rim.instance
-    fl = rim.filelist(/rakefile/i, 'lib')
+    fl = rim.filelist(/^rakefile/i, 'lib')
     assert_equal %w(Rakefile lib), fl.to_a
   end
 
