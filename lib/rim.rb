@@ -92,3 +92,4 @@ class Rim
 end
 
 require 'rim/core'
+require 'rim/rimrc'
