@@ -16,10 +16,14 @@ class Rim
 
   # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*'</code>)
   attr_accessor :gem_files
+
+  # Dependencies for development (default: <code>rim ~> Rim::VERSION</code>)
+  attr_accessor :development_dependencies
 end
 
 Rim.defaults do
   gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*')
+  development_dependencies "rim ~> #{Rim::VERSION}"
 end
 
 Rim.after_setup do
@@ -47,6 +51,10 @@ Rim.after_setup do
       s.version = version
       s.require_paths = require_paths
       s.files = gem_files
+      Array(development_dependencies).each do |depend|
+        g, v = depend.split(' ', 2)
+        s.add_development_dependency *[g, v]
+      end
     end
 
     task_object = klass.new(spec) do |pkg|
