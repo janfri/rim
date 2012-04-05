@@ -11,7 +11,7 @@ Rim.defaults do
 end
 
 Rim.after_setup do
-  if Dir.exist?('.git')
+  if File.exist?('.git') && File.directory?('.git')
     tag_name = "v#{version}"
     namespace :git do
       desc "Create git tag #{tag_name}"

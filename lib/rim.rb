@@ -24,7 +24,7 @@ class Rim
   # Otherwise the method yields Rim.instance.
   def self.defaults(&blk)
     rim = Rim.instance
-    if blk.arity == 0
+    if blk.arity < 1
       rim.instance_eval &blk
     else
       yield rim
@@ -37,7 +37,7 @@ class Rim
   # Otherwise the method yields Rim.instance.
   def self.setup(&blk)
     rim = Rim.instance
-    if blk.arity == 0
+    if blk.arity < 1
       rim.instance_eval &blk
     else
       yield rim
