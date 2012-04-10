@@ -26,7 +26,7 @@ For advanced usuage have a look at the Rakefile of rim.
 * Define tasks with +Rim.after_setup+.
 
 A very simple example extension:
-  # require other extensions if neccessary
+  # require other extensions if necessary
 
   require 'rim/another_extension'
 
@@ -52,7 +52,7 @@ A very simple example extension:
     end
   end
 
-For more examples have a look at the tasks comming with rim in lib/rim/*.rb
+For more examples have a look at the tasks coming with rim in lib/rim/*.rb
 
 
 === License
