@@ -19,11 +19,21 @@ class Rim
 
   # Dependencies for development (default: <code>rim ~> Rim::VERSION</code>)
   attr_accessor :development_dependencies
+
+  # Required Ruby version
+  attr_accessor :ruby_version
+
+  # Installation message
+  attr_accessor :install_message
+
+  # Requirements (external to rubygems)
+  attr_accessor :requirements
 end
 
 Rim.defaults do
   gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*')
-  development_dependencies "rim ~> #{Rim::VERSION}"
+  development_dependencies ["rim ~> #{Rim::VERSION}"]
+  requirements []
 end
 
 Rim.after_setup do
@@ -51,6 +61,9 @@ Rim.after_setup do
       s.version = version
       s.require_paths = require_paths
       s.files = gem_files
+      s.required_ruby_version = ruby_version if ruby_version
+      s.post_install_message = install_message
+      s.requirements = Array(requirements)
       Array(development_dependencies).each do |depend|
         g, v = depend.split(' ', 2)
         s.add_development_dependency *[g, v]
