@@ -1,3 +1,7 @@
+1.6.2
+Make git tasks independant from current
+locale and push tags.
+
 1.6.1
 New option test_reqiure_paths for test task.
 
