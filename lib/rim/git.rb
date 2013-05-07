@@ -21,15 +21,15 @@ Rim.after_setup do
       end
       desc 'Check if git tree is clean'
       task :check do
-        res = `git status`
-        if res !~ /nothing to commit/
+        res = `git status --porcelain`
+        unless res.empty?
           raise 'Git tree is not clean'
         end
       end
       desc 'Push master to git remotes'
       task :push => :check do
         git_remotes.each do |remote|
-          sh "git push #{remote} master"
+          sh "git push --tags #{remote} master"
         end
       end
     end
