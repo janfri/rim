@@ -2,12 +2,12 @@
 require 'rim/release'
 
 class Rim
-  # Git remotes to push (default: <tt>origin</tt>)
-  attr_accessor :git_remotes
+  # Git push commands (default: <tt>['--tags origin master']</tt>)
+  attr_accessor :git_push_commands
 end
 
 Rim.defaults do
-  git_remotes %w(origin)
+  git_push_commands ['--tags origin master']
 end
 
 Rim.after_setup do
@@ -28,8 +28,8 @@ Rim.after_setup do
       end
       desc 'Push master to git remotes'
       task :push => :check do
-        git_remotes.each do |remote|
-          sh "git push --tags #{remote} master"
+        git_push_commands.each do |cmd|
+          sh "git push #{cmd}"
         end
       end
     end
