@@ -1,3 +1,12 @@
+1.7.0
+Remove option git_remotes for git_push_commands.
+This brings a much more flexible way to do things
+in git:push. PLease update your ~/.rimrc if
+necessary.
+Adding support for local .rimrc files. Now ~/.rimrc
+is first loaded if it exists and then .rimrc is
+loaded if it exists.
+
 1.6.2
 Make git tasks independant from current
 locale and push tags.
