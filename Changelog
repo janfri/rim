@@ -1,3 +1,6 @@
+1.8.0
+New option license for gem tasks.
+
 1.7.0
 Remove option git_remotes for git_push_commands.
 This brings a much more flexible way to do things

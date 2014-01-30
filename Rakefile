@@ -10,6 +10,7 @@ Rim.setup do
   name 'rim'
   authors 'Jan Friedrich'
   email 'janfri26@gmail.com'
+  license 'MIT'
   homepage 'http://gitorious.org/rim'
   version Rim::VERSION
   summary 'A simple project / gem manager'

@@ -11,6 +11,9 @@ class Rim
   # E-Mail address
   attr_accessor :email
 
+  # License imformation
+  attr_accessor :license
+
   # Project homepage
   attr_accessor :homepage
 
@@ -55,6 +58,7 @@ Rim.after_setup do
       s.email = email
       s.platform = Gem::Platform::RUBY
       s.description = description
+      s.license = license
       s.homepage = homepage
       s.name = name
       s.summary = summary
