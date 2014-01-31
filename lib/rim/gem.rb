@@ -58,7 +58,7 @@ Rim.after_setup do
       s.email = email
       s.platform = Gem::Platform::RUBY
       s.description = description
-      s.license = license
+      s.license = license if license
       s.homepage = homepage
       s.name = name
       s.summary = summary
