@@ -25,6 +25,8 @@ Rim.after_setup do
     begin
       require 'rake/rdoctask'
       klass = Rake::RDocTask
+    rescue LoadError
+      warn 'No rdoc found!'
     rescue Exception
       warn 'No rdoc found!'
     end
