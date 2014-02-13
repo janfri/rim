@@ -1,6 +1,4 @@
 # -- encoding: utf-8 --
-require 'rim/install'
-require 'rim/release'
 class Rim
   # Project / gem description
   attr_accessor :description
@@ -53,6 +51,7 @@ Rim.after_setup do
     task :gem do
       puts "Building #{name}-#{version}.gem"
     end
+
     spec = Gem::Specification.new do |s|
       s.authors = authors
       s.email = email
@@ -77,24 +76,28 @@ Rim.after_setup do
     task_object = klass.new(spec) do |pkg|
     end
 
+    gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
+
     namespace :gem do
-      gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
       desc 'Push the gem to rubygems.org'
       task :push => [:clean, :test, :gem] do
         sh "gem push #{gem_filename}"
       end
-      desc "Install #{gem_filename}"
-      task :install => :gem do
-        sh "gem install #{gem_filename}"
-      end
-      desc "Uninstall gem #{name} version #{version}"
-      task :uninstall do
-        sh "gem uninstall --version #{version} #{name}"
-      end
     end
-    task :release => :gem
-    task :install => 'gem:install'
-    task :uninstall => 'gem:uninstall'
+
+    desc "Install #{gem_filename}"
+    task :install => :gem do
+      sh "gem install #{gem_filename}"
+    end
+
+    desc "Uninstall gem #{name} version #{version}"
+    task :uninstall do
+      sh "gem uninstall --version #{version} #{name}"
+    end
+
+    if feature_loaded 'rim/release'
+      task :release => :gem
+    end
   end
 
 end

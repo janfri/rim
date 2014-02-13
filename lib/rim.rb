@@ -9,7 +9,7 @@ require 'singleton'
 # versions as possible and is easy to extend. Feel free to dislike it. ;)
 class Rim
 
-  VERSION = '1.9.0'
+  VERSION = '2.0.0'
 
   begin
     require 'rake/dsl_definition'
@@ -70,6 +70,12 @@ class Rim
       end
     end
     res
+  end
+
+  # Helper method to check if a module is already required
+  # Example: feature_loaded('rim/release')
+  def feature_loaded name
+    ! $LOADED_FEATURES.grep(%r(#{name})).empty?
   end
 
   private

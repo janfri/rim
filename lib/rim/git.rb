@@ -1,6 +1,4 @@
 # -- encoding: utf-8 --
-require 'rim/release'
-
 class Rim
   # Git push commands (default: <tt>['--tags origin master']</tt>)
   attr_accessor :git_push_commands
@@ -23,7 +21,7 @@ Rim.after_setup do
       task :check do
         res = `git status --porcelain`
         unless res.empty?
-          raise 'Git tree is not clean'
+          fail 'Git tree is not clean'
         end
       end
       desc 'Push master to git remotes'
@@ -33,8 +31,10 @@ Rim.after_setup do
         end
       end
     end
-    task :release => 'git:check' do
-      invoke 'git:tag'
+    if feature_loaded 'rim/release'
+      task :release => 'git:check' do
+        invoke 'git:tag'
+      end
     end
   end
 end

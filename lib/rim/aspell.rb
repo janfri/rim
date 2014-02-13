@@ -1,6 +1,4 @@
 # -- encoding: utf-8 --
-require 'rim/release'
-
 class Rim
   # Files to check via aspell (default: /^README/i)
   attr_accessor :aspell_files
