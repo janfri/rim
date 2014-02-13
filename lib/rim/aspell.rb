@@ -19,4 +19,19 @@ Rim.after_setup do
       sh "aspell -c -x -l #{aspell_lang} #{fn}"
     end
   end
+  namespace :aspell do
+    desc 'Test if there are no spellcheck errors'
+    task :check do
+      error_files = []
+      aspell_files.each do |fn|
+        unless `aspell list -l #{aspell_lang} < #{fn}`.empty?
+          error_files << fn
+        end
+      end
+      fail "There are spelling errors in #{error_files.join(', ')}" unless error_files.empty?
+    end
+  end
+  if feature_loaded 'rim/release'
+    task :release => 'aspell:check'
+  end
 end
