@@ -16,7 +16,7 @@ Minimal Rakefile:
     version '1.0.0'
   end
 
-For advanced usuage have a look at the Rakefile of rim.
+For advanced usage have a look at the Rakefile of rim.
 
 
 === Writing an extension
