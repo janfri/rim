@@ -5,6 +5,7 @@ require 'rim/check_version'
 require 'rim/gem'
 require 'rim/git'
 require 'rim/rdoc'
+require 'rim/regtest'
 require 'rim/release'
 require 'rim/test'
 
