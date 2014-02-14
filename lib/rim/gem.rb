@@ -80,7 +80,7 @@ Rim.after_setup do
 
     namespace :gem do
       desc 'Push the gem to rubygems.org'
-      task :push => [:clean, :test, :gem] do
+      task :push => :gem do
         sh "gem push #{gem_filename}"
       end
     end

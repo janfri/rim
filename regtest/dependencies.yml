@@ -35,9 +35,8 @@ result: |
       Rakefile
   rake gem
       pkg/rim-2.0.0.gem
-  rake gem:push
-      clean
       test
+  rake gem:push
       gem
   rake git:check
   rake git:push
@@ -105,7 +104,6 @@ result: |
       git:check
       check_version
       gem
-      clean
       test
   rake repackage
       clobber_package

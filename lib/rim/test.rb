@@ -20,5 +20,12 @@ Rim.after_setup do
       t.libs << test_require_paths
     end
     task :default => :test
+
+    if feature_loaded 'rim/gem'
+      task :gem => :test
+    end
+    if feature_loaded 'rim/release'
+      task :release => :test
+    end
   end
 end
