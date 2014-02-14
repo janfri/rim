@@ -1,0 +1,118 @@
+---
+sample: rake -P
+result: |
+  rake aspell
+  rake aspell:check
+  rake check_version
+  rake clean
+  rake clobber
+      clean
+      clobber_package
+      clobber_rdoc
+  rake clobber_package
+  rake clobber_rdoc
+  rake default
+      test
+  rake doc
+  rake doc/index.html
+      README.rdoc
+      lib/rim
+      lib/rim.rb
+      lib/rim/aspell.rb
+      lib/rim/check_version.rb
+      lib/rim/core.rb
+      lib/rim/gem.rb
+      lib/rim/git.rb
+      lib/rim/info.rb
+      lib/rim/irb.rb
+      lib/rim/pry.rb
+      lib/rim/rdoc.rb
+      lib/rim/regtest.rb
+      lib/rim/release.rb
+      lib/rim/rimrc.rb
+      lib/rim/ripl.rb
+      lib/rim/test.rb
+      Rakefile
+  rake gem
+      pkg/rim-2.0.0.gem
+  rake gem:push
+      clean
+      test
+      gem
+  rake git:check
+  rake git:push
+      check
+  rake git:tag
+  rake info
+  rake install
+      gem
+  rake irb
+  rake package
+      gem
+  rake pkg
+  rake pkg/rim-2.0.0
+      Changelog
+      LICENSE
+      README.rdoc
+      Rakefile
+      lib/rim
+      lib/rim.rb
+      lib/rim/aspell.rb
+      lib/rim/check_version.rb
+      lib/rim/core.rb
+      lib/rim/gem.rb
+      lib/rim/git.rb
+      lib/rim/info.rb
+      lib/rim/irb.rb
+      lib/rim/pry.rb
+      lib/rim/rdoc.rb
+      lib/rim/regtest.rb
+      lib/rim/release.rb
+      lib/rim/rimrc.rb
+      lib/rim/ripl.rb
+      lib/rim/test.rb
+      test/test_helper_methods.rb
+  rake pkg/rim-2.0.0.gem
+      pkg
+      pkg/rim-2.0.0
+      Changelog
+      LICENSE
+      README.rdoc
+      Rakefile
+      lib/rim
+      lib/rim.rb
+      lib/rim/aspell.rb
+      lib/rim/check_version.rb
+      lib/rim/core.rb
+      lib/rim/gem.rb
+      lib/rim/git.rb
+      lib/rim/info.rb
+      lib/rim/irb.rb
+      lib/rim/pry.rb
+      lib/rim/rdoc.rb
+      lib/rim/regtest.rb
+      lib/rim/release.rb
+      lib/rim/rimrc.rb
+      lib/rim/ripl.rb
+      lib/rim/test.rb
+      test/test_helper_methods.rb
+  rake pry
+  rake rdoc
+      doc/index.html
+  rake regtest
+  rake release
+      aspell:check
+      git:check
+      check_version
+      gem
+      clean
+      test
+  rake repackage
+      clobber_package
+      package
+  rake rerdoc
+      clobber_rdoc
+      rdoc
+  rake ripl
+  rake test
+  rake uninstall
