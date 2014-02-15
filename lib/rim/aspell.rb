@@ -1,6 +1,6 @@
 # -- encoding: utf-8 --
 class Rim
-  # Files to check via aspell (default: /^README/i)
+  # Files to check via aspell (default: /^README/i, /^Changelog/i)
   attr_accessor :aspell_files
 
   # Language for aspell (default: 'en')
@@ -8,7 +8,7 @@ class Rim
 end
 
 Rim.defaults do
-  aspell_files filelist(/^README/i)
+  aspell_files filelist(/^README/i, /^Changelog/i)
   aspell_lang 'en'
 end
 
