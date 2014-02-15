@@ -14,7 +14,7 @@ Rim.after_setup do
     fail "No version information in #{changelog}"
   end
   end
-  if feature_loaded 'rim/release'
+  if feature_loaded? 'rim/release'
     task :release => :check_version
   end
 end

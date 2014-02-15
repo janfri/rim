@@ -95,7 +95,7 @@ Rim.after_setup do
       sh "gem uninstall --version #{version} #{name}"
     end
 
-    if feature_loaded 'rim/release'
+    if feature_loaded? 'rim/release'
       task :release => :gem
     end
   end

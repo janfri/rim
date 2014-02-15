@@ -21,10 +21,10 @@ Rim.after_setup do
     end
     task :default => :test
 
-    if feature_loaded 'rim/gem'
+    if feature_loaded? 'rim/gem'
       task :gem => :test
     end
-    if feature_loaded 'rim/release'
+    if feature_loaded? 'rim/release'
       task :release => :test
     end
   end

@@ -73,8 +73,8 @@ class Rim
   end
 
   # Helper method to check if a module is already required
-  # Example: feature_loaded('rim/release')
-  def feature_loaded name
+  # Example: feature_loaded?('rim/release')
+  def feature_loaded? name
     ! $LOADED_FEATURES.grep(%r(#{name})).empty?
   end
 
