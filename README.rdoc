@@ -11,7 +11,7 @@ Minimal Rakefile:
   # require 'rim/...'
 
   Rim.setup do
-    name 'My project'
+    name 'my_project'
     authors 'me'
     version '1.0.0'
   end
