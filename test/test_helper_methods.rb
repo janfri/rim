@@ -8,19 +8,31 @@ class TestHelperMethods < Test::Unit::TestCase
     attr_accessor :some_new_attr
   end
 
+  def setup
+    @rim = Rim.instance
+  end
+
   def test_attr_accessor
-    rim = Rim.instance
-    assert_nil rim.some_new_attr, 'New attribute must be nil.'
-    rim.some_new_attr = :standard_setter
-    assert_equal :standard_setter, rim.some_new_attr
-    rim.some_new_attr :advanced_setter
-    assert_equal :advanced_setter, rim.some_new_attr
+    assert_nil @rim.some_new_attr, 'New attribute must be nil.'
+    @rim.some_new_attr = :standard_setter
+    assert_equal :standard_setter, @rim.some_new_attr
+    @rim.some_new_attr :advanced_setter
+    assert_equal :advanced_setter, @rim.some_new_attr
   end
 
   def test_filelist
-    rim = Rim.instance
-    fl = rim.filelist(/^rakefile/i, 'lib')
+    fl = @rim.filelist(/^rakefile/i, 'lib')
     assert_equal %w(Rakefile lib), fl.to_a
+  end
+
+  def test_feature_loaded
+    assert_equal false, @rim.feature_loaded?('et/http')
+    assert_equal false, @rim.feature_loaded?('net/htt')
+    assert_equal false, @rim.feature_loaded?('net/http')
+    require 'net/http'
+    assert_equal false, @rim.feature_loaded?('et/http')
+    assert_equal false, @rim.feature_loaded?('net/htt')
+    assert_equal true, @rim.feature_loaded?('net/http')
   end
 
 end
