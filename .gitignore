@@ -1,5 +1,6 @@
 .rimrc
 *~
 .*.swp
+.yardoc
 doc
 pkg
