@@ -1,0 +1,123 @@
+---
+sample: lib/rim/aspell.rb
+result: |
+  rake aspell
+  rake aspell:check
+  rake clean
+  rake clobber
+      clean
+---
+sample: lib/rim/check_version.rb
+result: |
+  rake check_version
+  rake clean
+  rake clobber
+      clean
+---
+sample: lib/rim/core.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+---
+sample: lib/rim/gem.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+      clobber_package
+  rake clobber_package
+  rake gem
+      pkg/xxx-0.0.1.gem
+  rake gem:push
+      gem
+  rake install
+      gem
+  rake package
+      gem
+  rake pkg
+  rake pkg/xxx-0.0.1
+      Rakefile
+      test/test.rb
+  rake pkg/xxx-0.0.1.gem
+      pkg
+      pkg/xxx-0.0.1
+      Rakefile
+      test/test.rb
+  rake repackage
+      clobber_package
+      package
+  rake uninstall
+---
+sample: lib/rim/git.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+---
+sample: lib/rim/info.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake info
+---
+sample: lib/rim/irb.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake irb
+---
+sample: lib/rim/pry.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake pry
+---
+sample: lib/rim/rdoc.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+      clobber_rdoc
+  rake clobber_rdoc
+  rake doc
+  rake doc/index.html
+      Rakefile
+  rake rdoc
+      doc/index.html
+  rake rerdoc
+      clobber_rdoc
+      rdoc
+---
+sample: lib/rim/regtest.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake regtest
+---
+sample: lib/rim/release.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake release
+---
+sample: lib/rim/ripl.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake ripl
+---
+sample: lib/rim/test.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake default
+      test
+  rake test
