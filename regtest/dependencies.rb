@@ -2,5 +2,5 @@
 require 'regtest'
 
 Regtest.sample 'rake -P' do
-  `rake -P`
+  `rake -P SELFTEST=true`
 end

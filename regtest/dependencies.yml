@@ -45,7 +45,6 @@ result: |
   rake info
   rake install
       gem
-  rake irb
   rake package
       gem
   rake pkg
@@ -95,15 +94,14 @@ result: |
       lib/rim/ripl.rb
       lib/rim/test.rb
       test/test_helper_methods.rb
-  rake pry
   rake rdoc
       doc/index.html
   rake regtest
   rake release
       aspell:check
-      git:check
       check_version
       gem
+      git:check
       test
   rake repackage
       clobber_package
@@ -111,6 +109,5 @@ result: |
   rake rerdoc
       clobber_rdoc
       rdoc
-  rake ripl
   rake test
   rake uninstall
