@@ -18,6 +18,9 @@ class Rim
   # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*'</code>)
   attr_accessor :gem_files
 
+  # Dependencies of the gem
+  attr_accessor :dependencies
+
   # Dependencies for development (default: <code>[%W(rim ~>#{Rim::VERSION.split(/\./)[0..1].join('.')})]</code>)
   attr_accessor :development_dependencies
 
@@ -67,6 +70,9 @@ Rim.after_setup do
       s.required_ruby_version = ruby_version if ruby_version
       s.post_install_message = install_message
       s.requirements = Array(requirements)
+      Array(dependencies).each do |dep|
+        s.add_dependency *Array(dep)
+      end
       Array(development_dependencies).each do |dep|
         s.add_development_dependency *Array(dep)
       end
