@@ -78,11 +78,6 @@ class Rim
     ! $LOADED_FEATURES.grep(%r(/#{name}\.rb$)).empty?
   end
 
-  # Helper method to prepend dependencies of tasks
-  def prepend_dep dep, t
-    task(t).prerequisites.unshift(dep)
-  end
-
   private
 
   def self.attr_accessor attr

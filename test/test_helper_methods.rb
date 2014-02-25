@@ -35,14 +35,4 @@ class TestHelperMethods < Test::Unit::TestCase
     assert_equal true, @rim.feature_loaded?('net/http')
   end
 
-  require 'rake'
-  require 'rake/dsl_definition'
-  include Rake::DSL
-
-  def test_prepend_dep
-    t = task :a => :b
-    @rim.prepend_dep :c, :a
-    assert_equal [:c, :b], task(:a).prerequisites.map {|e| e.to_sym}
-  end
-
 end
