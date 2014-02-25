@@ -35,7 +35,7 @@ result: |
       Rakefile
   rake gem
       check_version
-      pkg/rim-2.0.0.gem
+      pkg/rim-2.0.1.gem
       git:check
       test
   rake gem:push
@@ -52,7 +52,7 @@ result: |
   rake package
       gem
   rake pkg
-  rake pkg/rim-2.0.0
+  rake pkg/rim-2.0.1
       Changelog
       LICENSE
       README.rdoc
@@ -74,9 +74,9 @@ result: |
       lib/rim/ripl.rb
       lib/rim/test.rb
       test/test_helper_methods.rb
-  rake pkg/rim-2.0.0.gem
+  rake pkg/rim-2.0.1.gem
       pkg
-      pkg/rim-2.0.0
+      pkg/rim-2.0.1
       Changelog
       LICENSE
       README.rdoc
