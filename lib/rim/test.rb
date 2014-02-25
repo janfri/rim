@@ -22,10 +22,10 @@ Rim.after_setup do
     task :default => :test
 
     if feature_loaded? 'rim/gem'
-      prepend_dep :test, :gem
+      task :gem => :test
     end
     if feature_loaded? 'rim/release'
-      prepend_dep :test, :release
+      task :release => :test
     end
   end
 end

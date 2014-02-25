@@ -34,14 +34,18 @@ result: |
       lib/rim/test.rb
       Rakefile
   rake gem
-      test
+      check_version
       pkg/rim-2.0.0.gem
+      git:check
+      test
   rake gem:push
       gem
   rake git:check
+      aspell:check
   rake git:push
       check
   rake git:tag
+      gem:push
   rake info
   rake install
       gem
@@ -98,11 +102,12 @@ result: |
       doc/index.html
   rake regtest
   rake release
-      test
       aspell:check
       check_version
-      gem
+      gem:push
       git:check
+      git:tag
+      test
   rake repackage
       clobber_package
       package

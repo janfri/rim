@@ -31,10 +31,12 @@ Rim.after_setup do
         end
       end
     end
+    if feature_loaded? 'rim/gem'
+      task :gem => 'git:check'
+      task 'git:tag' => 'gem:push'
+    end
     if feature_loaded? 'rim/release'
-      task :release => 'git:check' do
-        invoke 'git:tag'
-      end
+      task :release => %w(git:check git:tag)
     end
   end
 end

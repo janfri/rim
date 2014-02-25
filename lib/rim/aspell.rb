@@ -31,6 +31,9 @@ Rim.after_setup do
       fail "There are spelling errors in #{error_files.join(', ')}" unless error_files.empty?
     end
   end
+  if feature_loaded? 'rim/git'
+    task 'git:check' => 'aspell:check'
+  end
   if feature_loaded? 'rim/release'
     task :release => 'aspell:check'
   end
