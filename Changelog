@@ -1,3 +1,7 @@
+2.0.1
+Better internal dependency management.
+Removing Rim#prepend_dep again, it can be solved with multistage dependencies.
+
 2.0.0
 Using gem standard to describe versions in dependencies,
 this breaks backwards compatibility.
