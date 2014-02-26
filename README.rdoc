@@ -54,6 +54,17 @@ A very simple example extension:
 
 For more examples have a look at the tasks coming with rim in lib/rim/*.rb
 
+=== Similar projects
+
+* https://github.com/seattlerb/hoe
+* https://github.com/evan/echoe
+
+=== Credits
+
+[<b>Jim Weirich</b>] For written the great Rake. (Sad that he is already gone.)
+
+[<b>Ryan Davis</b> and <b>Evan Weaver</b>] for their inspirations in Hoe respectively Echoe.
 
 === License
-MIT license, see file LICENSE.
+
+MIT-style license, see file LICENSE.
