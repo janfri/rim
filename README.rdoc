@@ -63,7 +63,7 @@ For more examples have a look at the tasks coming with rim in lib/rim/*.rb
 
 [<b>Jim Weirich</b>] For written the great Rake. (Sad that he is already gone.)
 
-[<b>Ryan Davis</b> and <b>Evan Weaver</b>] for their inspirations in Hoe respectively Echoe.
+[<b>Ryan Davis</b> and <b>Evan Weaver</b>] For their inspirations in Hoe respectively Echoe.
 
 === License
 
