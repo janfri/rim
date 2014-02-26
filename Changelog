@@ -1,3 +1,8 @@
+2.1.0
+New module rim/tire to load a good set of defaults.
+Expand FileList instances in info task.
+Update README and add new regtest samples.
+
 2.0.1
 Better internal dependency management.
 Removing Rim#prepend_dep again, it can be solved with multistage dependencies.
