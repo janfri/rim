@@ -1,7 +1,6 @@
 $:.unshift File.dirname(__FILE__) + '/lib'
 require 'rim'
 require 'rim/aspell'
-require 'rim/check_version'
 require 'rim/gem'
 require 'rim/git'
 require 'rim/info'
@@ -9,6 +8,7 @@ require 'rim/rdoc'
 require 'rim/regtest'
 require 'rim/release'
 require 'rim/test'
+require 'rim/version'
 
 Rim.setup do
   name 'rim'
