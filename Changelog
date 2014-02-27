@@ -1,3 +1,7 @@
+2.2.0
+Renaming task check_version -> version:check.
+New options aspell_encoding and aspell_word_list.
+
 2.1.0
 New module rim/tire to load a good set of defaults.
 Expand FileList instances in info task.
