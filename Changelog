@@ -43,7 +43,7 @@ Make git tasks independent from current
 locale and push tags.
 
 1.6.1
-New option test_reqiure_paths for test task.
+New option test_require_paths for test task.
 
 1.6.0
 New task: pry
