@@ -21,14 +21,14 @@ Rim.defaults do
 end
 
 Rim.after_setup do
-  desc 'Check files via aspell'
+  desc 'Interactive spelling check via aspell'
   task :aspell do
     aspell_files.each do |fn|
       sh "aspell -c -x --encoding=#{aspell_encoding} -l #{aspell_lang} -p #{aspell_word_list} #{fn}"
     end
   end
   namespace :aspell do
-    desc 'Test if there are no spellcheck errors'
+    desc 'Check if there are no spellcheck errors'
     task :check do
       error_files = []
       aspell_files.each do |fn|
