@@ -1,5 +1,5 @@
 2.2.1
-Adding rim/check_version again with a fail message to avoid approve
+Adding rim/check_version again with a fail message to approve
 backwards compatibility.
 
 2.2.0
