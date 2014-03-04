@@ -3,7 +3,6 @@ sample: rake -P
 result: |
   rake aspell
   rake aspell:check
-  rake check_version
   rake clean
   rake clobber
       clean
@@ -32,12 +31,14 @@ result: |
       lib/rim/rimrc.rb
       lib/rim/ripl.rb
       lib/rim/test.rb
+      lib/rim/tire.rb
+      lib/rim/version.rb
       Rakefile
   rake gem
-      check_version
-      pkg/rim-2.0.1.gem
+      pkg/rim-2.2.1.gem
       git:check
       test
+      version:check
   rake gem:push
       gem
   rake git:check
@@ -52,7 +53,7 @@ result: |
   rake package
       gem
   rake pkg
-  rake pkg/rim-2.0.1
+  rake pkg/rim-2.2.1
       Changelog
       LICENSE
       README.rdoc
@@ -73,10 +74,12 @@ result: |
       lib/rim/rimrc.rb
       lib/rim/ripl.rb
       lib/rim/test.rb
+      lib/rim/tire.rb
+      lib/rim/version.rb
       test/test_helper_methods.rb
-  rake pkg/rim-2.0.1.gem
+  rake pkg/rim-2.2.1.gem
       pkg
-      pkg/rim-2.0.1
+      pkg/rim-2.2.1
       Changelog
       LICENSE
       README.rdoc
@@ -97,17 +100,19 @@ result: |
       lib/rim/rimrc.rb
       lib/rim/ripl.rb
       lib/rim/test.rb
+      lib/rim/tire.rb
+      lib/rim/version.rb
       test/test_helper_methods.rb
   rake rdoc
       doc/index.html
   rake regtest
   rake release
       aspell:check
-      check_version
       gem:push
       git:check
       git:tag
       test
+      version:check
   rake repackage
       clobber_package
       package
@@ -116,3 +121,4 @@ result: |
       rdoc
   rake test
   rake uninstall
+  rake version:check

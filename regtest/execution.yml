@@ -7,10 +7,6 @@ sample: rake -n aspell:check
 result:
 - "** Execute (dry run) aspell:check"
 ---
-sample: rake -n check_version
-result:
-- "** Execute (dry run) check_version"
----
 sample: rake -n clean
 result:
 - "** Execute (dry run) clean"
@@ -34,22 +30,22 @@ sample: rake -n gem
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 ---
 sample: rake -n gem:push
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) gem:push"
 ---
@@ -68,11 +64,11 @@ sample: rake -n git:tag
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) gem:push"
 - "** Execute (dry run) git:tag"
@@ -85,11 +81,11 @@ sample: rake -n install
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) install"
 ---
@@ -97,27 +93,28 @@ sample: rake -n package
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) package"
 ---
 sample: rake -n rdoc
 result:
+- "** Execute (dry run) doc/index.html"
 - "** Execute (dry run) rdoc"
 ---
 sample: rake -n release
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) gem:push"
 - "** Execute (dry run) git:tag"
@@ -128,11 +125,11 @@ result:
 - "** Execute (dry run) clobber_package"
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) check_version"
 - "** Execute (dry run) pkg"
-- "** Execute (dry run) pkg/rim-2.0.1"
-- "** Execute (dry run) pkg/rim-2.0.1.gem"
+- "** Execute (dry run) pkg/rim-2.2.1"
+- "** Execute (dry run) pkg/rim-2.2.1.gem"
 - "** Execute (dry run) test"
+- "** Execute (dry run) version:check"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) package"
 - "** Execute (dry run) repackage"
@@ -140,6 +137,7 @@ result:
 sample: rake -n rerdoc
 result:
 - "** Execute (dry run) clobber_rdoc"
+- "** Execute (dry run) doc/index.html"
 - "** Execute (dry run) rdoc"
 - "** Execute (dry run) rerdoc"
 ---
@@ -150,3 +148,7 @@ result:
 sample: rake -n uninstall
 result:
 - "** Execute (dry run) uninstall"
+---
+sample: rake -n version:check
+result:
+- "** Execute (dry run) version:check"
