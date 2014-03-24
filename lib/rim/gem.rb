@@ -40,69 +40,67 @@ Rim.defaults do
   requirements []
 end
 
+directory 'pkg'
+CLOBBER << 'pkg'
+
+
 Rim.after_setup do
-  klass = nil
-  begin
-    require 'rubygems/package_task'
-    klass = Gem::PackageTask
-  rescue LoadError
-    require 'rake/gempackagetask'
-    klass = Rake::GemPackageTask
+
+  require 'rubygems/package'
+
+  gem_file = "pkg/#{name}-#{version}.gem"
+
+  desc "Build the gem file #{gem_file}"
+  task :gem => 'gem:build'
+
+  namespace :gem do
+
+    task :build => 'pkg' do
+      spec = Gem::Specification.new do |s|
+        s.authors = authors
+        s.email = email
+        s.platform = Gem::Platform::RUBY
+        s.description = description
+        s.license = license if license
+        s.homepage = homepage
+        s.name = name
+        s.summary = summary
+        s.version = version
+        s.require_paths = Array(require_paths)
+        s.files = Array(gem_files)
+        s.required_ruby_version = ruby_version if ruby_version
+        s.post_install_message = install_message
+        s.requirements = Array(requirements)
+        Array(dependencies).each do |dep|
+          s.add_dependency *Array(dep)
+        end
+        Array(development_dependencies).each do |dep|
+          s.add_development_dependency *Array(dep)
+        end
+      end
+      Gem::Package.build spec
+      mv File.basename(gem_file), 'pkg'
+    end
+
+    desc "Push the gem #{name} version #{version} to rubygems.org"
+    task :push => :gem do
+      sh "gem push #{gem_file}"
+    end
+
   end
 
-  if klass
-    task :gem do
-      puts "Building #{name}-#{version}.gem"
-    end
+  desc "Install version #{version}"
+  task :install => :gem do
+    sh "gem install #{gem_file}"
+  end
 
-    spec = Gem::Specification.new do |s|
-      s.authors = authors
-      s.email = email
-      s.platform = Gem::Platform::RUBY
-      s.description = description
-      s.license = license if license
-      s.homepage = homepage
-      s.name = name
-      s.summary = summary
-      s.version = version
-      s.require_paths = require_paths
-      s.files = gem_files
-      s.required_ruby_version = ruby_version if ruby_version
-      s.post_install_message = install_message
-      s.requirements = Array(requirements)
-      Array(dependencies).each do |dep|
-        s.add_dependency *Array(dep)
-      end
-      Array(development_dependencies).each do |dep|
-        s.add_development_dependency *Array(dep)
-      end
-    end
+  desc "Uninstall version #{version}"
+  task :uninstall do
+    sh "gem uninstall --version #{version} #{name}"
+  end
 
-    task_object = klass.new(spec) do |pkg|
-    end
-
-    gem_filename = format('%s/%s.gem', task_object.package_dir, task_object.name)
-
-    namespace :gem do
-      desc 'Push the gem to rubygems.org'
-      task :push => :gem do
-        sh "gem push #{gem_filename}"
-      end
-    end
-
-    desc "Install #{gem_filename}"
-    task :install => :gem do
-      sh "gem install #{gem_filename}"
-    end
-
-    desc "Uninstall gem #{name} version #{version}"
-    task :uninstall do
-      sh "gem uninstall --version #{version} #{name}"
-    end
-
-    if feature_loaded? 'rim/release'
-      task :release => 'gem:push'
-    end
+  if feature_loaded? 'rim/release'
+    task :release => 'gem:push'
   end
 
 end
