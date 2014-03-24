@@ -1,3 +1,8 @@
+2.3.0
+Complete rewrite of gem specific tasks to make them lazy.
+New option Rim#regtest_files.
+Include regtest files in gem.
+
 2.2.1
 Adding rim/check_version again with a fail message to approve
 backwards compatibility.
