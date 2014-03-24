@@ -25,28 +25,15 @@ result: |
   rake clean
   rake clobber
       clean
-      clobber_package
-  rake clobber_package
   rake gem
-      pkg/xxx-0.0.1.gem
+      gem:build
+  rake gem:build
+      pkg
   rake gem:push
       gem
   rake install
       gem
-  rake package
-      gem
   rake pkg
-  rake pkg/xxx-0.0.1
-      Rakefile
-      test/test.rb
-  rake pkg/xxx-0.0.1.gem
-      pkg
-      pkg/xxx-0.0.1
-      Rakefile
-      test/test.rb
-  rake repackage
-      clobber_package
-      package
   rake uninstall
 ---
 sample: lib/rim/git.rb
@@ -127,35 +114,22 @@ result: |
   rake clean
   rake clobber
       clean
-      clobber_package
-  rake clobber_package
   rake default
       test
   rake gem
-      pkg/xxx-0.0.1.gem
+      gem:build
       test
+  rake gem:build
+      pkg
   rake gem:push
       gem
   rake info
   rake install
       gem
-  rake package
-      gem
   rake pkg
-  rake pkg/xxx-0.0.1
-      Rakefile
-      test/test.rb
-  rake pkg/xxx-0.0.1.gem
-      pkg
-      pkg/xxx-0.0.1
-      Rakefile
-      test/test.rb
   rake release
       gem:push
       test
-  rake repackage
-      clobber_package
-      package
   rake test
   rake uninstall
 ---
