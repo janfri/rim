@@ -38,7 +38,7 @@ result: |
       test
       version:check
   rake gem:build
-      pkg
+      pkg/rim-2.3.0.gem
   rake gem:push
       gem
   rake git:check
@@ -51,6 +51,31 @@ result: |
   rake install
       gem
   rake pkg
+  rake pkg/rim-2.3.0.gem
+      pkg
+      README.rdoc
+      Changelog
+      LICENSE
+      Rakefile
+      lib/rim
+      lib/rim.rb
+      lib/rim/aspell.rb
+      lib/rim/check_version.rb
+      lib/rim/core.rb
+      lib/rim/gem.rb
+      lib/rim/git.rb
+      lib/rim/info.rb
+      lib/rim/irb.rb
+      lib/rim/pry.rb
+      lib/rim/rdoc.rb
+      lib/rim/regtest.rb
+      lib/rim/release.rb
+      lib/rim/rimrc.rb
+      lib/rim/ripl.rb
+      lib/rim/test.rb
+      lib/rim/tire.rb
+      lib/rim/version.rb
+      test/test_helper_methods.rb
   rake rdoc
       doc/index.html
   rake regtest

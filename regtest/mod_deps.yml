@@ -28,12 +28,16 @@ result: |
   rake gem
       gem:build
   rake gem:build
-      pkg
+      pkg/xxx-0.0.1.gem
   rake gem:push
       gem
   rake install
       gem
   rake pkg
+  rake pkg/xxx-0.0.1.gem
+      pkg
+      Rakefile
+      test/test.rb
   rake uninstall
 ---
 sample: lib/rim/git.rb
@@ -120,13 +124,17 @@ result: |
       gem:build
       test
   rake gem:build
-      pkg
+      pkg/xxx-0.0.1.gem
   rake gem:push
       gem
   rake info
   rake install
       gem
   rake pkg
+  rake pkg/xxx-0.0.1.gem
+      pkg
+      Rakefile
+      test/test.rb
   rake release
       gem:push
       test
