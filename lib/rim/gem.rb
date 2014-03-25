@@ -41,7 +41,7 @@ Rim.defaults do
 end
 
 directory 'pkg'
-CLOBBER << 'pkg'
+CLOBBER.include(FileList['pkg'].existing)
 
 
 Rim.after_setup do
