@@ -38,7 +38,7 @@ result: |
       test
       version:check
   rake gem:build
-      pkg/rim-2.3.0.gem
+      pkg/rim-2.3.1.gem
   rake gem:push
       gem
   rake git:check
@@ -51,7 +51,7 @@ result: |
   rake install
       gem
   rake pkg
-  rake pkg/rim-2.3.0.gem
+  rake pkg/rim-2.3.1.gem
       pkg
       README.rdoc
       Changelog

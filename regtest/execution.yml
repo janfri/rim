@@ -25,6 +25,8 @@ sample: rake -n gem
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-2.3.1.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) test"
 - "** Execute (dry run) version:check"
@@ -34,6 +36,8 @@ sample: rake -n gem:push
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-2.3.1.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) test"
 - "** Execute (dry run) version:check"
@@ -55,6 +59,8 @@ sample: rake -n git:tag
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-2.3.1.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) test"
 - "** Execute (dry run) version:check"
@@ -70,6 +76,8 @@ sample: rake -n install
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-2.3.1.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) test"
 - "** Execute (dry run) version:check"
@@ -85,6 +93,8 @@ sample: rake -n release
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-2.3.1.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) test"
 - "** Execute (dry run) version:check"
