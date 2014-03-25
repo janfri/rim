@@ -55,7 +55,7 @@ Rim.after_setup do
 
   namespace :gem do
 
-    task :build => 'pkg' do
+    file gem_file => ['pkg', gem_files].flatten do
       spec = Gem::Specification.new do |s|
         s.authors = authors
         s.email = email
@@ -81,6 +81,8 @@ Rim.after_setup do
       Gem::Package.build spec
       mv File.basename(gem_file), 'pkg'
     end
+
+    task :build => gem_file
 
     desc "Push the gem #{name} version #{version} to rubygems.org"
     task :push => :gem do
