@@ -32,7 +32,7 @@ Rim.after_setup do
       end
     end
     if feature_loaded? 'rim/gem'
-      task :gem => 'git:check'
+      task 'gem:push' => 'git:check'
       task 'git:tag' => 'gem:push'
     end
     if feature_loaded? 'rim/release'

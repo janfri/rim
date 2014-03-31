@@ -17,7 +17,7 @@ Rim.after_setup do
     end
   end
   if feature_loaded? 'rim/gem'
-    task :gem => 'version:check'
+    task 'gem:push' => 'version:check'
   end
   if feature_loaded? 'rim/release'
     task :release => 'version:check'
