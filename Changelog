@@ -1,3 +1,8 @@
+2.4.0
+New Tasks: rspec and yard.
+Move checking dependencies from gem to gem:push to allow easy local
+installation of newer versions.
+
 2.3.1
 Build gem file only if necessary.
 Bugfix: Add pkg dir to CLOBBER only if it exists.

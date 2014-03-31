@@ -104,6 +104,12 @@ result: |
       clean
   rake ripl
 ---
+sample: lib/rim/rspec.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+---
 sample: lib/rim/test.rb
 result: |
   rake clean
@@ -147,3 +153,10 @@ result: |
   rake clobber
       clean
   rake version:check
+---
+sample: lib/rim/yard.rb
+result: |
+  rake clean
+  rake clobber
+      clean
+  rake yard

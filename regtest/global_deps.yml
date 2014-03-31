@@ -28,19 +28,21 @@ result: |
       lib/rim/release.rb
       lib/rim/rimrc.rb
       lib/rim/ripl.rb
+      lib/rim/rspec.rb
       lib/rim/test.rb
       lib/rim/tire.rb
       lib/rim/version.rb
+      lib/rim/yard.rb
       Rakefile
   rake gem
       gem:build
-      git:check
       test
-      version:check
   rake gem:build
-      pkg/rim-2.3.1.gem
+      pkg/rim-2.4.0.gem
   rake gem:push
       gem
+      git:check
+      version:check
   rake git:check
       aspell:check
   rake git:push
@@ -51,7 +53,7 @@ result: |
   rake install
       gem
   rake pkg
-  rake pkg/rim-2.3.1.gem
+  rake pkg/rim-2.4.0.gem
       pkg
       README.rdoc
       Changelog
@@ -72,9 +74,11 @@ result: |
       lib/rim/release.rb
       lib/rim/rimrc.rb
       lib/rim/ripl.rb
+      lib/rim/rspec.rb
       lib/rim/test.rb
       lib/rim/tire.rb
       lib/rim/version.rb
+      lib/rim/yard.rb
       test/test_helper_methods.rb
   rake rdoc
       doc/index.html
