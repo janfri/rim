@@ -1,6 +1,6 @@
 # -- encoding: utf-8 --
 class Rim
-  # Test files (default: <code>'test/\*\*/\*.rb')</code>
+  # Test files (default: <code>'test/**/*.rb')</code>
   attr_accessor :test_files
 
   # Require dirs for tests (default: <code>%w(lib test)</code>)
