@@ -4,7 +4,7 @@ class Rim
   attr_accessor :irb_requires
 end
 
-Rim.defaults do
+Rim.after_setup do
   irb_requires name
 end
 
