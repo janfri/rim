@@ -84,7 +84,6 @@ Rim.after_setup do
   directory 'pkg'
 
   CLOBBER.include(FileList['pkg'].existing)
-  CLOBBER << gemspec_file
 
   desc "Build the gem file #{gem_file}"
   task :gem => 'gem:build'
