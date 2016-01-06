@@ -1,3 +1,7 @@
+2.6.1
+Ensure that gemspec file is generated if necessary before git:check.
+Update homepage.
+
 2.6.0
 Use gemspec file to generate gems.
 
