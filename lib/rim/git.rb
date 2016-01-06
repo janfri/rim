@@ -13,7 +13,7 @@ Rim.after_setup do
     tag_name = "v#{version}"
     namespace :git do
       desc "Create git tag #{tag_name}"
-      tag_task = task :tag do
+      task :tag do
         cmd = "git tag #{tag_name}"
         sh cmd
       end
@@ -34,6 +34,9 @@ Rim.after_setup do
     if feature_loaded? 'rim/gem'
       task 'gem:push' => 'git:check'
       task 'git:tag' => 'gem:push'
+      if feature_loaded? 'rim/release'
+        task :release => 'gem:spec'
+      end
     end
     if feature_loaded? 'rim/release'
       task :release => %w(git:check git:tag)

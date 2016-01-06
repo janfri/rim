@@ -96,7 +96,7 @@ Rim.after_setup do
       mv File.basename(gem_file), 'pkg'
     end
 
-    task :build => [:test, gem_file]
+    task :build => [:spec, :test, gem_file]
 
     desc "Push the gem #{name} version #{version} to rubygems.org"
     task :push => :gem do
