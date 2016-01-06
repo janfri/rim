@@ -15,7 +15,7 @@ Rim.setup do
   authors 'Jan Friedrich'
   email 'janfri26@gmail.com'
   license 'MIT'
-  homepage 'http://gitorious.org/rim'
+  homepage 'https://github.com/janfri/rim'
   version Rim::VERSION
   summary 'A simple project / gem manager'
   description <<-END
