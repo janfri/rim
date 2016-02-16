@@ -11,6 +11,11 @@ class Rim
 
   # File to store the word list of the project (default: './.aspell.pws')
   attr_accessor :aspell_word_list
+
+  def aspell_errors? fn
+    ! `aspell list --encoding=#{aspell_encoding} -l #{aspell_lang} -p #{aspell_word_list} < #{fn}`.empty?
+  end
+
 end
 
 Rim.defaults do
@@ -24,7 +29,9 @@ Rim.after_setup do
   desc 'Interactive spelling check via aspell'
   task :aspell do
     aspell_files.each do |fn|
-      sh "aspell -c -x --encoding=#{aspell_encoding} -l #{aspell_lang} -p #{aspell_word_list} #{fn}"
+      if aspell_errors? fn
+        sh "aspell -c -x --encoding=#{aspell_encoding} -l #{aspell_lang} -p #{aspell_word_list} #{fn}"
+      end
     end
   end
   namespace :aspell do
@@ -32,9 +39,7 @@ Rim.after_setup do
     task :check do
       error_files = []
       aspell_files.each do |fn|
-        unless `aspell list --encoding=#{aspell_encoding} -l #{aspell_lang} -p #{aspell_word_list} < #{fn}`.empty?
-          error_files << fn
-        end
+        error_files << fn if aspell_errors? fn
       end
       fail "There are spelling errors in #{error_files.join(', ')}" unless error_files.empty?
     end
