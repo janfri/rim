@@ -33,6 +33,8 @@ class Rim
   # Requirements (external to rubygems)
   attr_accessor :requirements
 
+  protected
+
   def gem_spec
     spec = Gem::Specification.new do |s|
       s.authors = authors
@@ -66,6 +68,11 @@ class Rim
     disclaimer.gsub!(/^\s+/, '')
     spec.to_ruby.sub(/^$/, disclaimer)
   end
+
+  def gemspec_file
+    "#{name}.gemspec"
+  end
+
 end
 
 Rim.defaults do
@@ -79,7 +86,6 @@ Rim.after_setup do
   require 'rubygems/package'
 
   gem_file = "pkg/#{name}-#{version}.gem"
-  gemspec_file = "#{name}.gemspec"
 
   directory 'pkg'
 
