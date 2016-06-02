@@ -12,7 +12,7 @@ Rim.after_setup do
   desc 'Start an irb session and loading lib'
   task :irb do
     i_params = Array(require_paths).map {|e| '-I ' << e}.join(' ')
-    r_params = Array(irb_requires).map {|e| '-r' << e}.join(' ')
+    r_params = Array(irb_requires).map {|e| '-r ' << e}.join(' ')
     sh "irb #{i_params} #{r_params}"
   end
 end
