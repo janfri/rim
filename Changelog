@@ -1,3 +1,6 @@
+2.7.1
+Add space after -r parameter in irb task.
+
 2.7.0
 Check version in gemspec file in version:check task if gem is used and improve error messages.
 Fix disclaimer for gemspec.
