@@ -1,6 +1,6 @@
 # -- encoding: utf-8 --
 class Rim
-  # Encoding odf spell checked files (default: 'UTF-8')
+  # Encoding of spell checked files (default: 'UTF-8')
   attr_accessor :aspell_encoding
 
   # Files to check via aspell (default: /^README/i, /^Changelog/i)
