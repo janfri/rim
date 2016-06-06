@@ -1,3 +1,6 @@
+2.8.0.
+New Attributes test_warning and test_verbose.
+
 2.7.0
 Check version in gemspec file in version:check task if gem is used and improve error messages.
 Fix disclaimer for gemspec.
