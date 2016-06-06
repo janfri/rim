@@ -1,3 +1,9 @@
+2.8.1
+New attributes test_warning and test_verbose.
+
+2.8.0
+Yanked release.
+
 2.7.1
 Add space after -r parameter in irb task.
 
