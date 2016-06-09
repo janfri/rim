@@ -48,6 +48,7 @@ Rim.after_setup do
     task 'git:check' => 'aspell:check'
   end
   if feature_loaded? 'rim/release'
+    task :prepare_release => 'aspell:check'
     task :release => 'aspell:check'
   end
 end

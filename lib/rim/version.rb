@@ -36,11 +36,17 @@ Rim.after_setup do
         fail "More than one version information in #{gemspec_file}"
       end
     end
+
+    if feature_loaded? 'rim/release'
+      task :check => 'gem:spec'
+    end
+
   end
   if feature_loaded? 'rim/gem'
     task 'gem:push' => 'version:check'
   end
   if feature_loaded? 'rim/release'
+    task :prepare_release => 'version:check'
     task :release => 'version:check'
   end
 end

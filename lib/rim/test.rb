@@ -35,6 +35,7 @@ Rim.after_setup do
       task :gem => :test
     end
     if feature_loaded? 'rim/release'
+      task :prepare_release => :test
       task :release => :test
     end
   end

@@ -22,6 +22,7 @@ Rim.after_setup do
       task :gem => :rspec
     end
     if feature_loaded? 'rim/release'
+      task :prepare_release => :rspec
       task :release => :rspec
     end
   end

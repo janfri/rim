@@ -7,6 +7,7 @@ Rim.after_setup do
     task :gem => 'version:check'
   end
   if feature_loaded? 'rim/release'
+    task :prepare_release => 'version:check'
     task :release => 'version:check'
   end
 end
