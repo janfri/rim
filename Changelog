@@ -1,3 +1,7 @@
+2.9.0
+New task: prepare_release.
+Bugfix: Setting default value for irb_requires.
+
 2.8.2
 Bugfix: Setting defaults in irb.
 
