@@ -4,8 +4,10 @@ class Rim
   attr_accessor :irb_requires
 end
 
-Rim.defaults do
-  irb_requires name
+# Use Rim.after_setup because name in not yet set
+# in Rim.defaults
+Rim.after_setup do |r|
+  r.irb_requires ||= r.name
 end
 
 Rim.after_setup do
