@@ -1,3 +1,6 @@
+2.11.1
+Fix including .gemspec file into gem.
+
 2.11.0
 Include Gemfile and .gemspec file in generated gems.
 
