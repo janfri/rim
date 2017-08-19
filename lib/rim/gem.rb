@@ -15,7 +15,7 @@ class Rim
   # Project homepage
   attr_accessor :homepage
 
-  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*'</code>)
+  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'lib/**/*', 'test/**/*'</code>)
   attr_accessor :gem_files
 
   # Dependencies of the gem
@@ -77,7 +77,7 @@ class Rim
 end
 
 Rim.defaults do
-  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, 'bin/*', 'lib/**/*', 'test/**/*')
+  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'lib/**/*', 'test/**/*')
   development_dependencies [%W(rim ~>#{Rim::VERSION.split(/\./)[0..1].join('.')})]
   requirements []
 end
@@ -109,7 +109,9 @@ Rim.after_setup do
       sh "gem push #{gem_file}"
     end
 
-    file gemspec_file => gem_files do
+    gem_files_without_gemspec = gem_files.dup
+    gem_files_without_gemspec.exclude('*.gemspec')
+    file gemspec_file => gem_files_without_gemspec do
       File.write(gemspec_file, gem_spec)
     end
 
