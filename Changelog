@@ -1,3 +1,6 @@
+2.11.0
+Include Gemfile and .gemspec file in generated gems.
+
 2.10.0
 Remove the annoying ".freeze" in created gemspecs.
 
