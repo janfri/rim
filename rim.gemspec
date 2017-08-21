@@ -27,15 +27,18 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rake>, ["< 100", "> 0"])
       s.add_development_dependency(%q<rim>, ["~> 2.11"])
+      s.add_development_dependency(%q<test-unit>, ["~> 3"])
       s.add_development_dependency(%q<regtest>, ["~> 1.0"])
     else
       s.add_dependency(%q<rake>, ["< 100", "> 0"])
       s.add_dependency(%q<rim>, ["~> 2.11"])
+      s.add_dependency(%q<test-unit>, ["~> 3"])
       s.add_dependency(%q<regtest>, ["~> 1.0"])
     end
   else
     s.add_dependency(%q<rake>, ["< 100", "> 0"])
     s.add_dependency(%q<rim>, ["~> 2.11"])
+    s.add_dependency(%q<test-unit>, ["~> 3"])
     s.add_dependency(%q<regtest>, ["~> 1.0"])
   end
 end
