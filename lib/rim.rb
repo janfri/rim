@@ -25,7 +25,7 @@ class Rim
   def self.defaults(&blk)
     rim = Rim.instance
     if blk.arity < 1
-      rim.instance_eval &blk
+      rim.instance_eval(&blk)
     else
       yield rim
     end
@@ -38,7 +38,7 @@ class Rim
   def self.setup(&blk)
     rim = Rim.instance
     if blk.arity < 1
-      rim.instance_eval &blk
+      rim.instance_eval(&blk)
     else
       yield rim
     end
@@ -91,7 +91,7 @@ class Rim
 
   def self.execute_definitions
     @definitions.each do |blk|
-      Rim.instance.instance_eval &blk
+      Rim.instance.instance_eval(&blk)
     end
   end
 
