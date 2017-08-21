@@ -13,6 +13,6 @@ end
 Rim.after_setup do
   if feature_loaded? 'rim/gem'
     self.gem_files += ::REGTEST_FILES
-    development_dependencies << %w(regtest ~>0.4)
+    development_dependencies << %w(regtest ~>1.0)
   end
 end
