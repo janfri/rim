@@ -11,6 +11,9 @@ class Rim
 
   # Paths for require to load the lib (default: <code>['lib']</code>
   attr_accessor :require_paths
+
+  alias author authors
+  alias author= authors=
 end
 
 Rim.defaults do |r|

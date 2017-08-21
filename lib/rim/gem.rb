@@ -10,7 +10,7 @@ class Rim
   attr_accessor :email
 
   # License imformation
-  attr_accessor :license
+  attr_accessor :licenses
 
   # Project homepage
   attr_accessor :homepage
@@ -32,6 +32,9 @@ class Rim
 
   # Requirements (external to rubygems)
   attr_accessor :requirements
+
+  alias license licenses
+  alias license= licenses=
 
   protected
 
