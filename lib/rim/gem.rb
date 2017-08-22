@@ -115,7 +115,6 @@ Rim.after_setup do
     gem_files_without_gemspec = gem_files.clone
     gem_files_without_gemspec.exclude('*.gemspec')
     file gemspec_file => gem_files_without_gemspec do
-      puts gem_files
       gem_files << gemspec_file
       File.write(gemspec_file, gem_spec)
     end
