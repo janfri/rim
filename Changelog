@@ -1,3 +1,8 @@
+2.12.0
+Upgrade development_dependency for regtest to version 1.0.
+Add rake >0 and < 100 to default development_dependencies.
+Some internal improvements.
+
 2.11.1
 Fix including .gemspec file into gem.
 
