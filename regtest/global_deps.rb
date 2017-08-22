@@ -2,5 +2,5 @@
 require 'regtest'
 
 Regtest.sample 'rake -P' do
-  `rake -P SELFTEST=true`
+  `rake -P SELFTEST=true`.gsub %r{(?<=pkg/rim-)(.+)(?=\.gem)}, 'x.x.x'
 end

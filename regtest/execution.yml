@@ -23,21 +23,25 @@ result:
 ---
 sample: rake -n gem
 result:
-- "** Execute (dry run) pkg/rim-2.4.0.gem"
-- "** Execute (dry run) gem:build"
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 ---
 sample: rake -n gem:push
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) pkg/rim-2.4.0.gem"
-- "** Execute (dry run) gem:build"
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) gem:push"
+---
+sample: rake -n gem:spec
+result:
+- "** Execute (dry run) gem:spec"
 ---
 sample: rake -n git:check
 result:
@@ -54,9 +58,9 @@ sample: rake -n git:tag
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) pkg/rim-2.4.0.gem"
-- "** Execute (dry run) gem:build"
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) gem:push"
@@ -68,34 +72,29 @@ result:
 ---
 sample: rake -n install
 result:
-- "** Execute (dry run) pkg/rim-2.4.0.gem"
-- "** Execute (dry run) gem:build"
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) install"
 ---
-sample: rake -n rdoc
-result:
-- "** Execute (dry run) doc/index.html"
-- "** Execute (dry run) rdoc"
----
-sample: rake -n release
+sample: rake -n prepare_release
 result:
 - "** Execute (dry run) aspell:check"
-- "** Execute (dry run) git:check"
-- "** Execute (dry run) pkg/rim-2.4.0.gem"
-- "** Execute (dry run) gem:build"
 - "** Execute (dry run) test"
-- "** Execute (dry run) gem"
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) version:check"
-- "** Execute (dry run) gem:push"
-- "** Execute (dry run) git:tag"
-- "** Execute (dry run) release"
+- "** Execute (dry run) prepare_release"
+---
+sample: rake -n rdoc
+result:
+- "** Execute (dry run) doc/created.rid"
+- "** Execute (dry run) rdoc"
 ---
 sample: rake -n rerdoc
 result:
 - "** Execute (dry run) clobber_rdoc"
-- "** Execute (dry run) doc/index.html"
+- "** Execute (dry run) doc/created.rid"
 - "** Execute (dry run) rdoc"
 - "** Execute (dry run) rerdoc"
 ---
@@ -109,4 +108,5 @@ result:
 ---
 sample: rake -n version:check
 result:
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) version:check"

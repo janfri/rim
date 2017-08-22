@@ -28,17 +28,24 @@ result: |
   rake gem
       gem:build
   rake gem:build
+      spec
+      test
       pkg/xxx-0.0.1.gem
   rake gem:push
       gem
+  rake gem:spec
+      xxx.gemspec
   rake install
       gem
   rake pkg
   rake pkg/xxx-0.0.1.gem
       pkg
+      xxx.gemspec
+  rake uninstall
+  rake xxx.gemspec
+      Changelog
       Rakefile
       test/test.rb
-  rake uninstall
 ---
 sample: lib/rim/git.rb
 result: |
@@ -75,10 +82,10 @@ result: |
       clobber_rdoc
   rake clobber_rdoc
   rake doc
-  rake doc/index.html
+  rake doc/created.rid
       Rakefile
   rake rdoc
-      doc/index.html
+      doc/created.rid
   rake rerdoc
       clobber_rdoc
       rdoc
@@ -95,6 +102,7 @@ result: |
   rake clean
   rake clobber
       clean
+  rake prepare_release
   rake release
 ---
 sample: lib/rim/ripl.rb
@@ -130,22 +138,31 @@ result: |
       gem:build
       test
   rake gem:build
+      spec
+      test
       pkg/xxx-0.0.1.gem
   rake gem:push
       gem
+  rake gem:spec
+      xxx.gemspec
   rake info
   rake install
       gem
   rake pkg
   rake pkg/xxx-0.0.1.gem
       pkg
-      Rakefile
-      test/test.rb
+      xxx.gemspec
+  rake prepare_release
+      test
   rake release
       gem:push
       test
   rake test
   rake uninstall
+  rake xxx.gemspec
+      Changelog
+      Rakefile
+      test/test.rb
 ---
 sample: lib/rim/version.rb
 result: |

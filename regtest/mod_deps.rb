@@ -15,12 +15,18 @@ Rim.setup do
 end
 END
 
+Changelog = <<-END
+0.0.1
+First Version
+END
+
 lib_path = File.expand_path('lib')
 
-Dir['lib/rim/*.rb'].each do |fn|
+Dir['lib/rim/*.rb'].sort.each do |fn|
   next if fn =~/rimrc/
   Regtest.sample fn do
     Dir.chdir(Dir.tmpdir) do
+      File.write 'Changelog', Changelog
       FileUtils.mkdir_p('test')
       FileUtils.touch('test/test.rb')
       File.open('Rakefile', 'w') do |f|

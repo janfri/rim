@@ -11,7 +11,7 @@ result: |
   rake default
       test
   rake doc
-  rake doc/index.html
+  rake doc/created.rid
       README.rdoc
       lib/rim
       lib/rim.rb
@@ -38,11 +38,15 @@ result: |
       gem:build
       test
   rake gem:build
-      pkg/rim-2.4.0.gem
+      spec
+      test
+      pkg/rim-x.x.x.gem
   rake gem:push
       gem
       git:check
       version:check
+  rake gem:spec
+      rim.gemspec
   rake git:check
       aspell:check
   rake git:push
@@ -53,12 +57,33 @@ result: |
   rake install
       gem
   rake pkg
-  rake pkg/rim-2.4.0.gem
+  rake pkg/rim-x.x.x.gem
       pkg
+      rim.gemspec
+  rake prepare_release
+      aspell:check
+      test
+      version:check
+  rake rdoc
+      doc/created.rid
+  rake regtest
+  rake release
+      aspell:check
+      gem:push
+      gem:spec
+      git:check
+      git:tag
+      test
+      version:check
+  rake rerdoc
+      clobber_rdoc
+      rdoc
+  rake rim.gemspec
       README.rdoc
       Changelog
       LICENSE
       Rakefile
+      Gemfile
       lib/rim
       lib/rim.rb
       lib/rim/aspell.rb
@@ -80,19 +105,7 @@ result: |
       lib/rim/version.rb
       lib/rim/yard.rb
       test/test_helper_methods.rb
-  rake rdoc
-      doc/index.html
-  rake regtest
-  rake release
-      aspell:check
-      gem:push
-      git:check
-      git:tag
-      test
-      version:check
-  rake rerdoc
-      clobber_rdoc
-      rdoc
   rake test
   rake uninstall
   rake version:check
+      gem:spec
