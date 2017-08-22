@@ -25,6 +25,8 @@ sample: rake -n gem
 result:
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-x.x.x.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 ---
@@ -34,6 +36,8 @@ result:
 - "** Execute (dry run) git:check"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-x.x.x.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) version:check"
@@ -60,6 +64,8 @@ result:
 - "** Execute (dry run) git:check"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-x.x.x.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) version:check"
@@ -74,6 +80,8 @@ sample: rake -n install
 result:
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
+- "** Execute (dry run) pkg"
+- "** Execute (dry run) pkg/rim-x.x.x.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 - "** Execute (dry run) install"
