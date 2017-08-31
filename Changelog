@@ -1,3 +1,6 @@
+2.12.1
+Include aspell word list in generated gem.
+
 2.12.0
 Upgrade development_dependency for regtest to version 1.0.
 Add rake >0 and < 100 to default development_dependencies.
