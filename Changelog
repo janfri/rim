@@ -1,3 +1,7 @@
+2.13.0
+Remove version of development dependency for Rake and make dependency an
+empty array by default.
+
 2.12.1
 Include aspell word list in generated gem.
 
