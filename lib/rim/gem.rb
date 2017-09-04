@@ -21,7 +21,7 @@ class Rim
   # Dependencies of the gem
   attr_accessor :dependencies
 
-  # Dependencies for development (default: <code>[%w(rake >0 <100), %W(rim ~>#{Rim::VERSION.scan(/[^.]+\.[^.]+/).first})]</code>)
+  # Dependencies for development (default: <code>['rake', %W(rim ~>#{Rim::VERSION.scan(/[^.]+\.[^.]+/).first})]</code>)
   attr_accessor :development_dependencies
 
   # Required Ruby version
@@ -81,7 +81,8 @@ end
 
 Rim.defaults do
   gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'lib/**/*', 'test/**/*')
-  development_dependencies [%w(rake >0 <100),%W(rim ~>#{Rim::VERSION.scan(/[^.]+\.[^.]+/).first})]
+  dependencies []
+  development_dependencies ['rake',%W(rim ~>#{Rim::VERSION.scan(/[^.]+\.[^.]+/).first})]
   requirements []
 end
 
