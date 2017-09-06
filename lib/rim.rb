@@ -9,7 +9,7 @@ require 'singleton'
 # versions as possible and is easy to extend. Feel free to dislike it. ;)
 class Rim
 
-  VERSION = '2.13.0'
+  VERSION = '2.13.1'
 
   begin
     require 'rake/dsl_definition'
