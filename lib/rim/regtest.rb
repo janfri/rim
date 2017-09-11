@@ -2,11 +2,16 @@
 require 'regtest/task'
 
 class Rim
-  # Files to handle with regtest (default: <tt>REGTEST_FILES</tt>)
+  # ALL regtest files incl. sample files, results files
+  # and maybe other files (default: <tt>REGTEST_FILES</tt>)
   attr_accessor :regtest_files
+
+  # Sample files (Ruby files) for regtest (default: <tt>REGTEST_FILES_RB</tt>)
+  attr_accessor :regtest_files_rb
 end
 
 Rim.defaults do
+  regtest_files_rb ::REGTEST_FILES_RB
   regtest_files ::REGTEST_FILES
 end
 
