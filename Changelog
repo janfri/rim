@@ -1,3 +1,6 @@
+2.13.2
+Use Rim#regtest_files for gem_files to consider changes of them in Rim.setup.
+
 2.13.1
 Fix description of Rake tasks prepare_release and release.
 
