@@ -20,4 +20,10 @@ Rim.after_setup do
     self.gem_files += regtest_files
     development_dependencies << %w(regtest ~>1.0)
   end
+  if regtest_files_rb != REGTEST_FILES_RB
+    (::REGTEST_FILES_RB.clear << regtest_files_rb).flatten!
+  end
+  if regtest_files != REGTEST_FILES
+    (::REGTEST_FILES.clear << regtest_files).flatten!
+  end
 end
