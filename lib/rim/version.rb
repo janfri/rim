@@ -9,31 +9,28 @@ Rim.after_setup do
       desc "Check if Rim#version is equal to version in #{changelog}."
     end
     task :check do
+      version_re = /^(\d+\.\d+(?:\.\d+)+(?:\.?\S+)?)/
       # changelog
       line = File.open(changelog) do |f|
         f.readline
       end
-      if line =~ /^(\d+\.\d+(?:\.\d+)+)/
+      if line =~ version_re
         if $1 != version
-          fail "Version error (#{changelog}: #$1, Rim#version: #{version})"
+          fail "Version mismatch (#{changelog}: #$1, Rim#version: #{version})"
         end
       else
         fail "No version information in #{changelog}"
       end
-      # gemspec
-      fail 'No gemspec file found' unless File.exist? gemspec_file
-      re = /s\.version ?= ['"](\d+\.\d+\.\d+.*)['"]/o
-      match = File.readlines(gemspec_file).grep(re)
-      case match.size
-      when 1
-        match[0] =~ re
-        if $1 != version
-          fail "Version error (#{gemspec_file}: #$1, Rim#version: #{version})\nTry rake gem:spec"
+      if feature_loaded? 'rim/gem'
+        # gemspec
+        fail 'No gemspec file found' unless File.exist? gemspec_file
+        spec = eval File.read(gemspec_file)
+        unless spec.version
+          fail "No version information in #{gemspec_file}"
         end
-      when 0
-        fail "No version information in #{gemspec_file}"
-      else
-        fail "More than one version information in #{gemspec_file}"
+        if version != spec.version.to_s
+          fail "Version mismatch (#{gemspec_file}: #{spec.version}, Rim#version: #{version})\nTry rake gem:spec"
+        end
       end
     end
 
