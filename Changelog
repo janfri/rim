@@ -1,3 +1,6 @@
+2.15.0
+Allow pre-release version numbers.
+
 2.14.0
 New accessor Rim#regtest_files_rb.
 Ensure REGTEST_FILES_RB and REGTEST_FILES are identical with

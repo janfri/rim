@@ -1,4 +1,4 @@
-personal_ws-1.1 en 25 
+personal_ws-1.1 en 26 
 ripl
 rimrc
 gemspecs
@@ -13,6 +13,7 @@ Gemfile
 Rakefile
 rdoc
 aspell
+pre
 regtest
 attr
 gemspec
