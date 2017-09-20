@@ -74,6 +74,7 @@ result: |
       gem:spec
       git:check
       git:tag
+      regtest
       test
       version:check
   rake rerdoc

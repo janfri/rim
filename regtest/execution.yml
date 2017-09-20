@@ -120,6 +120,7 @@ result:
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) gem:push"
 - "** Execute (dry run) git:tag"
+- "** Execute (dry run) regtest"
 - "** Execute (dry run) release"
 ---
 sample: rake -n rerdoc
