@@ -1,6 +1,7 @@
-.rimrc
 *~
 .*.swp
+.regtestrc
+.rimrc
 .yardoc
 doc
 pkg
