@@ -8,11 +8,16 @@ class Rim
 
   # Sample files (Ruby files) for regtest (default: <tt>REGTEST_FILES_RB</tt>)
   attr_accessor :regtest_files_rb
+
+  # Flag if task regtest is invoked before releasing this means it is a
+  # precondition for tasks prepare_release and release (default: <tt>true</tt>)
+  attr_accessor :run_regtest_before_release
 end
 
 Rim.defaults do
   regtest_files_rb ::REGTEST_FILES_RB
   regtest_files ::REGTEST_FILES
+  run_regtest_before_release true
 end
 
 Rim.after_setup do
@@ -33,5 +38,11 @@ Rim.after_setup do
   end
   if regtest_files != REGTEST_FILES
     (::REGTEST_FILES.clear << regtest_files).flatten!
+  end
+  if feature_loaded? 'rim/release'
+    if run_regtest_before_release
+      task :prepare_release => :regtest
+      task :release => :regtest
+    end
   end
 end
