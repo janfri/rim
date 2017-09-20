@@ -1,3 +1,13 @@
+2.17.0
+Determine Regtest version and add it to development dependencies only if it is
+not yet set in Rakefile.
+New attribute Rim#run_regtest_before_release to invoke regtest task before
+releasing this means it is a precondition for tasks prepare_release and
+release.
+
+2.16.0
+accidentally yanked.
+
 2.15.0
 Allow pre-release version numbers.
 
