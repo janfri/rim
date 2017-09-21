@@ -62,7 +62,6 @@ result: |
       rim.gemspec
   rake prepare_release
       aspell:check
-      regtest
       test
       version:check
   rake rdoc
@@ -74,7 +73,6 @@ result: |
       gem:spec
       git:check
       git:tag
-      regtest
       test
       version:check
   rake rerdoc

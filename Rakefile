@@ -23,4 +23,5 @@ Goal is to have a project managing that just works on as many Ruby
 versions as possible and is easy to extend. Feel free to dislike it. ;)
   END
   development_dependencies << %w(test-unit ~>3)
+  run_regtest_before_release false
 end

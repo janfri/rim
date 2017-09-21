@@ -23,7 +23,6 @@ result:
 ---
 sample: rake -n gem
 result:
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
@@ -35,7 +34,6 @@ sample: rake -n gem:push
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
@@ -47,7 +45,6 @@ result:
 ---
 sample: rake -n gem:spec
 result:
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 ---
 sample: rake -n git:check
@@ -65,7 +62,6 @@ sample: rake -n git:tag
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
@@ -82,7 +78,6 @@ result:
 ---
 sample: rake -n install
 result:
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
@@ -94,9 +89,7 @@ result:
 sample: rake -n prepare_release
 result:
 - "** Execute (dry run) aspell:check"
-- "** Execute (dry run) regtest"
 - "** Execute (dry run) test"
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) prepare_release"
@@ -108,9 +101,8 @@ result:
 ---
 sample: rake -n release
 result:
-- "** Execute (dry run) rim.gemspec"
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) aspell:check"
+- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) git:check"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
@@ -120,7 +112,6 @@ result:
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) gem:push"
 - "** Execute (dry run) git:tag"
-- "** Execute (dry run) regtest"
 - "** Execute (dry run) release"
 ---
 sample: rake -n rerdoc
@@ -140,6 +131,5 @@ result:
 ---
 sample: rake -n version:check
 result:
-- "** Execute (dry run) rim.gemspec"
 - "** Execute (dry run) gem:spec"
 - "** Execute (dry run) version:check"
