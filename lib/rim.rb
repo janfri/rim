@@ -81,10 +81,8 @@ class Rim
   private
 
   def self.attr_accessor attr
-    public
     attr_writer attr
     self.class_eval "def #{attr}(arg=nil); arg.nil? ? @#{attr} : @#{attr} = arg; end"
-    private
   end
 
   @definitions = []
