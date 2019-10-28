@@ -1,3 +1,7 @@
+2.17.1
+Remove superfluous calls of public and private to suppress warnings in newer
+Ruby versions.
+
 2.17.0
 Determine Regtest version and add it to development dependencies only if it is
 not yet set in Rakefile.

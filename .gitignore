@@ -2,6 +2,8 @@
 .*.swp
 .regtestrc
 .rimrc
+.ruby-version
 .yardoc
+Gemfile.lock
 doc
 pkg
