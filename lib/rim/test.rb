@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 class Rim
   # Test files (default: <code>'test/**/*.rb')</code>
   attr_accessor :test_files

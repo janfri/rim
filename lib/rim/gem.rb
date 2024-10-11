@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 class Rim
   # Project / gem description
   attr_accessor :description

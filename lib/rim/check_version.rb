@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 Rim.after_setup do
   task :check_version do
     fail "Task check_version is obsolete, use version:check!"

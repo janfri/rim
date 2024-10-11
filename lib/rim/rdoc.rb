@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 class Rim
   # Directory for rdoc output
   attr_accessor :rdoc_dir

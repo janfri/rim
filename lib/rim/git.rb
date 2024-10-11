@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 class Rim
   # Git push commands (default: <tt>['--tags origin master']</tt>)
   attr_accessor :git_push_commands

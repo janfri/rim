@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 require 'regtest'
 require 'fileutils'
 require 'tmpdir'

@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 
 # Load ~/.rimrc if it exists
 home = if Dir.respond_to? :home

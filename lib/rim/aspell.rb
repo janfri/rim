@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 class Rim
   # Encoding of spell checked files (default: 'UTF-8')
   attr_accessor :aspell_encoding

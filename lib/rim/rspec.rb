@@ -1,4 +1,4 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
 class Rim
   # RSpec files (default: <code>'spec/**/*.rb')</code>
   attr_accessor :rspec_files
