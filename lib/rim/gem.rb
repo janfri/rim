@@ -15,8 +15,14 @@ class Rim
   # Project homepage
   attr_accessor :homepage
 
-  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'lib/**/*', 'test/**/*'</code>)
+  # Files included in the gem (default: <code>/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'exe/*', 'lib/**/*', 'test/**/*'</code>)
   attr_accessor :gem_files
+
+  # The path in the gem for executable scripts (default: <code>exe</code>)
+  attr_accessor :bindir
+
+  # Executables included in the gem (default: all files in <code>bindir</code>)
+  attr_accessor :executables
 
   # Dependencies of the gem
   attr_accessor :dependencies
@@ -51,6 +57,8 @@ class Rim
       s.version = version
       s.require_paths = Array(require_paths)
       s.files = Array(gem_files)
+      s.bindir = bindir if bindir
+      s.executables = Array(executables) if executables
       s.required_ruby_version = ruby_version if ruby_version
       s.post_install_message = install_message
       s.requirements = Array(requirements)
@@ -80,7 +88,13 @@ class Rim
 end
 
 Rim.defaults do
-  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'lib/**/*', 'test/**/*')
+  gem_files filelist(/^README/i, /^Changelog/i, /^COPYING/i, /^LICENSE/i, /^Rakefile/i, /^Gemfile$/, '*.gemspec', 'bin/*', 'exe/*', 'lib/**/*', 'test/**/*')
+  bindir 'exe'
+  if File.exist?(bindir)
+    Dir.chdir(bindir) do
+      executables filelist('*')
+    end
+  end
   dependencies []
   development_dependencies ['rake',%W(rim ~>#{Rim::VERSION.scan(/[^.]+\.[^.]+/).first})]
   requirements []
