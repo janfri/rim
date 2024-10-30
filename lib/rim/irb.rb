@@ -4,16 +4,15 @@ class Rim
   attr_accessor :irb_requires
 end
 
-# Use Rim.after_setup because name in not yet set
-# in Rim.defaults
+# Use Rim.after_setup because gemspec may not yet be set in Rim.defaults
 Rim.after_setup do |r|
-  r.irb_requires ||= r.name
+  r.irb_requires ||= r.gemspec.name
 end
 
 Rim.after_setup do
   desc 'Start an irb session and loading lib'
   task :irb do
-    i_params = Array(require_paths).map {|e| '-I ' << e}.join(' ')
+    i_params = Array(gemspec.require_paths).map {|e| '-I ' << e}.join(' ')
     r_params = Array(irb_requires).map {|e| '-r ' << e}.join(' ')
     sh "irb #{i_params} #{r_params}"
   end

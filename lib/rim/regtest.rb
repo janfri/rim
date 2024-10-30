@@ -22,16 +22,18 @@ end
 
 Rim.after_setup do
   if feature_loaded? 'rim/gem'
-    self.gem_files += regtest_files
-    unless development_dependencies.flatten.include? 'regtest'
-      begin
-        require 'regtest/version'
-        v = Regtest::VERSION.sub(/\.\d+(?:\.?\w+)?$/, '')
-        development_dependencies << %W(regtest ~>#{v})
-      rescue LoadError
-        development_dependencies << %w(regtest ~>1.0)
-      end
-    end
+    # FIXME Implement check?
+    #self.gem_files += regtest_files
+    # FIXME Implement check?
+#    unless development_dependencies.flatten.include? 'regtest'
+#      begin
+#        require 'regtest/version'
+#        v = Regtest::VERSION.sub(/\.\d+(?:\.?\w+)?$/, '')
+#        development_dependencies << %W(regtest ~>#{v})
+#      rescue LoadError
+#        development_dependencies << %w(regtest ~>1.0)
+#      end
+#    end
   end
   if regtest_files_rb != REGTEST_FILES_RB
     (::REGTEST_FILES_RB.clear << regtest_files_rb).flatten!

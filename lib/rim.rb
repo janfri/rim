@@ -95,5 +95,5 @@ class Rim
 
 end
 
-require 'rim/core'
+require 'rim/gemspec'
 require 'rim/rimrc' unless ENV['SELFTEST']

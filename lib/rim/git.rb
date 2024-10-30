@@ -10,7 +10,7 @@ end
 
 Rim.after_setup do
   if File.exist?('.git') && File.directory?('.git')
-    tag_name = "v#{version}"
+    tag_name = "v#{gemspec.version}"
     namespace :git do
       desc "Create git tag #{tag_name}"
       task :tag do
@@ -34,9 +34,6 @@ Rim.after_setup do
     if feature_loaded? 'rim/gem'
       task 'gem:push' => 'git:check'
       task 'git:tag' => 'gem:push'
-      if feature_loaded? 'rim/release'
-        task :release => 'gem:spec'
-      end
     end
     if feature_loaded? 'rim/release'
       task :release => %w(git:check git:tag)
