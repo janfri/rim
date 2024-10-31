@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 class Rim
   # Encoding of spell checked files (default: 'UTF-8')
   attr_accessor :aspell_encoding

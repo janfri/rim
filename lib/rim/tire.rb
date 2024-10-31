@@ -1,6 +1,6 @@
 # encoding: utf-8
-require 'rim'
-require 'rim/gem'
-require 'rim/info'
-require 'rim/release'
-require 'rim/test'
+
+require_relative 'gem'
+require_relative 'info'
+require_relative 'release'
+require_relative 'test'

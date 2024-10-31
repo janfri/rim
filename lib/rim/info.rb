@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 Rim.after_setup do
   desc 'Prints informations about the Rim object.'
   task :info do

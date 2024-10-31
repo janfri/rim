@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 require 'regtest/task'
 
 class Rim

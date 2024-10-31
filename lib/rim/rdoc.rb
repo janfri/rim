@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 class Rim
   # Directory for rdoc output
   attr_accessor :rdoc_dir

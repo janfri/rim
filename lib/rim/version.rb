@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 Rim.after_setup do
   namespace :version do
     changelog = filelist(/^Changelog/i).first

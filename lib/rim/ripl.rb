@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 Rim.after_setup do
   desc 'Start a ripl session and loading lib'
   task :ripl do

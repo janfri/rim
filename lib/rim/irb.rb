@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../rim'
+
 class Rim
   # Required files for irb (default: Rim#name)
   attr_accessor :irb_requires
