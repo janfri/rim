@@ -51,8 +51,4 @@ Rim.after_setup do
     task :prepare_release => 'aspell:check'
     task :release => 'aspell:check'
   end
-  if feature_loaded? 'rim/gem'
-    # FIXME Implement check?
-    #gem_files << aspell_word_list
-  end
 end
