@@ -23,18 +23,20 @@ result:
 ---
 sample: rake -n gem
 result:
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
 - "** Execute (dry run) pkg/rim-x.x.x.gem"
 - "** Execute (dry run) gem:build"
 - "** Execute (dry run) gem"
 ---
+sample: rake -n gem:files
+result:
+- "** Execute (dry run) gem:files"
+---
 sample: rake -n gem:push
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
 - "** Execute (dry run) pkg/rim-x.x.x.gem"
@@ -42,10 +44,6 @@ result:
 - "** Execute (dry run) gem"
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) gem:push"
----
-sample: rake -n gem:spec
-result:
-- "** Execute (dry run) gem:spec"
 ---
 sample: rake -n git:check
 result:
@@ -62,7 +60,6 @@ sample: rake -n git:tag
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) git:check"
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
 - "** Execute (dry run) pkg/rim-x.x.x.gem"
@@ -78,7 +75,6 @@ result:
 ---
 sample: rake -n install
 result:
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
 - "** Execute (dry run) pkg/rim-x.x.x.gem"
@@ -90,7 +86,6 @@ sample: rake -n prepare_release
 result:
 - "** Execute (dry run) aspell:check"
 - "** Execute (dry run) test"
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) version:check"
 - "** Execute (dry run) prepare_release"
 ---
@@ -99,10 +94,13 @@ result:
 - "** Execute (dry run) doc/created.rid"
 - "** Execute (dry run) rdoc"
 ---
+sample: rake -n rdoc:coverage
+result:
+- "** Execute (dry run) rdoc:coverage"
+---
 sample: rake -n release
 result:
 - "** Execute (dry run) aspell:check"
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) git:check"
 - "** Execute (dry run) test"
 - "** Execute (dry run) pkg"
@@ -131,5 +129,4 @@ result:
 ---
 sample: rake -n version:check
 result:
-- "** Execute (dry run) gem:spec"
 - "** Execute (dry run) version:check"

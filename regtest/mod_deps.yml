@@ -14,12 +14,6 @@ result: |
   rake clobber
       clean
 ---
-sample: lib/rim/core.rb
-result: |
-  rake clean
-  rake clobber
-      clean
----
 sample: lib/rim/gem.rb
 result: |
   rake clean
@@ -28,13 +22,11 @@ result: |
   rake gem
       gem:build
   rake gem:build
-      spec
       test
       pkg/xxx-0.0.1.gem
+  rake gem:files
   rake gem:push
       gem
-  rake gem:spec
-      xxx.gemspec
   rake install
       gem
   rake pkg
@@ -42,10 +34,12 @@ result: |
       pkg
       xxx.gemspec
   rake uninstall
-  rake xxx.gemspec
-      Changelog
-      Rakefile
-      test/test.rb
+---
+sample: lib/rim/gemspec.rb
+result: |
+  rake clean
+  rake clobber
+      clean
 ---
 sample: lib/rim/git.rb
 result: |
@@ -86,6 +80,7 @@ result: |
       Rakefile
   rake rdoc
       doc/created.rid
+  rake rdoc:coverage
   rake rerdoc
       clobber_rdoc
       rdoc
@@ -138,13 +133,11 @@ result: |
       gem:build
       test
   rake gem:build
-      spec
       test
       pkg/xxx-0.0.1.gem
+  rake gem:files
   rake gem:push
       gem
-  rake gem:spec
-      xxx.gemspec
   rake info
   rake install
       gem
@@ -159,10 +152,6 @@ result: |
       test
   rake test
   rake uninstall
-  rake xxx.gemspec
-      Changelog
-      Rakefile
-      test/test.rb
 ---
 sample: lib/rim/version.rb
 result: |
