@@ -23,6 +23,16 @@ Rim.after_setup do
 
     task :build => [:test, gem_file]
 
+    desc "Show files included and files not included in gem"
+    task :files do
+      gemspec_files = Rim.instance.gemspec.files
+      all_files = filelist('**/*') + filelist('**/.*')
+      all_files.select! {|fn| File.file?(fn)}
+      puts '===== Files included in gem: =====', gemspec_files.sort.join("\n")
+      puts
+      puts '=== Files NOT included in gem: ===', (all_files - gemspec_files).sort.join("\n")
+    end
+
     desc "Push the gem #{name} version #{version} to rubygems.org"
     task :push => :gem do
       sh "gem push #{gem_file}"
