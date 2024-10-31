@@ -21,7 +21,11 @@ Rim.after_setup do
       sh "gem build #{gemspec_file} -o #{gem_file}"
     end
 
-    task :build => [:test, gem_file]
+    if feature_loaded? 'rim/test'
+      task :build => [:test, gem_file]
+    else
+      task :build => [gem_file]
+    end
 
     desc "Show files included and files not included in gem"
     task :files do
