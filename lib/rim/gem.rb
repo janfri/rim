@@ -30,7 +30,7 @@ Rim.after_setup do
 
     desc "Show files included and files not included in gem"
     task :files do
-      gemspec_files = Rim.instance.gemspec.files
+      gemspec_files = gemspec.files
       all_files = filelist('**/*') + filelist('**/.*')
       all_files.select! {|fn| File.file?(fn)}
       puts '===== Files included in gem: =====', gemspec_files.sort.join("\n")
