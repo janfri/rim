@@ -5,20 +5,21 @@ Rim.after_setup do
 
   require 'rubygems/package'
 
+  directory PKG_DIR = 'pkg'
+
   name = gemspec.name
   version = gemspec.version
-  gem_file = "pkg/#{name}-#{version}.gem"
+  gem_file = File.join(PKG_DIR, "#{name}-#{version}.gem")
 
-  directory 'pkg'
 
-  CLOBBER.include(FileList['pkg'].existing)
+  CLOBBER.include(FileList[PKG_DIR].existing)
 
   desc "Build the gem file #{gem_file}"
   task :gem => 'gem:build'
 
   namespace :gem do
 
-    file gem_file => ['pkg', gemspec_file] do
+    file gem_file => [PKG_DIR, gemspec_file] + gemspec.files do
       sh "gem build #{gemspec_file} -o #{gem_file}"
     end
 
