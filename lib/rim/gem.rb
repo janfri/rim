@@ -33,9 +33,9 @@ Rim.after_setup do
       gemspec_files = gemspec.files
       all_files = filelist('**/*') + filelist('**/.*')
       all_files.select! {|fn| File.file?(fn)}
-      puts '===== Files included in gem: =====', gemspec_files.sort.join("\n")
+      puts '===== Files included in gem =====', gemspec_files.sort.join("\n")
       puts
-      puts '=== Files NOT included in gem: ===', (all_files - gemspec_files).sort.join("\n")
+      puts '=== Files NOT included in gem ===', (all_files - gemspec_files).sort.join("\n")
     end
 
     desc "Push the gem #{name} version #{version} to rubygems.org"
