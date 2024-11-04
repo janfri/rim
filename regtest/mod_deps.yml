@@ -22,7 +22,6 @@ result: |
   rake gem
       gem:build
   rake gem:build
-      test
       pkg/xxx-0.0.1.gem
   rake gem:files
   rake gem:push
@@ -33,6 +32,7 @@ result: |
   rake pkg/xxx-0.0.1.gem
       pkg
       xxx.gemspec
+      Changelog
   rake uninstall
 ---
 sample: lib/rim/gemspec.rb
@@ -145,6 +145,7 @@ result: |
   rake pkg/xxx-0.0.1.gem
       pkg
       xxx.gemspec
+      Changelog
   rake prepare_release
       test
   rake release

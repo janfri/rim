@@ -58,6 +58,28 @@ result: |
   rake pkg/rim-x.x.x.gem
       pkg
       rim.gemspec
+      Changelog
+      LICENSE
+      README.rdoc
+      lib/rim.rb
+      lib/rim/aspell.rb
+      lib/rim/check_version.rb
+      lib/rim/gem.rb
+      lib/rim/gemspec.rb
+      lib/rim/git.rb
+      lib/rim/info.rb
+      lib/rim/irb.rb
+      lib/rim/pry.rb
+      lib/rim/rdoc.rb
+      lib/rim/regtest.rb
+      lib/rim/release.rb
+      lib/rim/rimrc.rb
+      lib/rim/ripl.rb
+      lib/rim/rspec.rb
+      lib/rim/test.rb
+      lib/rim/tire.rb
+      lib/rim/version.rb
+      lib/rim/yard.rb
   rake prepare_release
       aspell:check
       test
