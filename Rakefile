@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+$:.unshift 'lib'
 ENV['SELFTEST'] = 'true'
 require_relative 'lib/rim/aspell'
 require_relative 'lib/rim/gem'
