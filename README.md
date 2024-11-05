@@ -6,7 +6,12 @@ versions as possible and is easy to extend. Feel free to dislike it. ;)
 
 ## Use for project management
 
-Minimal Rakefile:
+Since rim version 3.0.0 it is necessary to create a gemspec file with the basic
+configuration of the project. See [online
+documentation](https://guides.rubygems.org/specification-reference/) for more
+information. The rest is done in Rakefile.
+
+Example of a minimal Rakefile:
 
 ```ruby
 require 'rim'
@@ -19,6 +24,14 @@ end
 ```
 
 For advanced usage have a look at the Rakefile of rim.
+
+
+## Upgrading from Rim before version 3.0.0
+
+All accessor methods of configuration which can be defined in the gemspec file
+are no longer relevant. Rim emits a warning when such method is called and
+<em>does not</em> use those values any longer. It is necessary to set these
+values in the gemspec file.
 
 
 ## Writing an extension
@@ -71,6 +84,24 @@ For more examples have a look at the tasks coming with rim in <code>lib/rim/*.rb
 <em>Jim Weirich</em> For written the great Rake. (Sad that he is already gone.)
 
 <em>Ryan Davis</em> and <em>Evan Weaver</em> For their inspirations in Hoe respectively Echoe.
+
+
+## Contribution
+
+The code is also hosted in a git repository at [github](http://github.com/janfri/rim) and [bitbucket](https://bitbucket.org/janfri/rim)
+
+Feel free to contribute!
+
+
+## Versioning
+
+Rim follows [Semantic Versioning](https://semver.org/), both SemVer and
+SemVerTag.
+
+
+## Author
+
+Jan Friedrich <janfri26@gmail.com>
 
 
 ## License

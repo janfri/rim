@@ -12,7 +12,6 @@ result: |
       test
   rake doc
   rake doc/created.rid
-      README.rdoc
       lib/rim
       lib/rim.rb
       lib/rim/aspell.rb
@@ -60,7 +59,7 @@ result: |
       rim.gemspec
       Changelog
       LICENSE
-      README.rdoc
+      README.md
       lib/rim.rb
       lib/rim/aspell.rb
       lib/rim/check_version.rb
