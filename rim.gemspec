@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors = 'Jan Friedrich'
   s.description = "Goal is to have a project managing that just works on as many Ruby\nversions as possible and is easy to extend. Feel free to dislike it. ;)\n"
   s.email = 'janfri26@gmail.com'
-  s.files = %w[Changelog LICENSE README.rdoc] + Dir['lib/**/*.rb']
+  s.files = %w[Changelog LICENSE README.md] + Dir['lib/**/*.rb']
   s.homepage = 'https://github.com/janfri/rim'
   s.licenses = 'MIT'
   s.summary = 'A simple project / gem manager'
